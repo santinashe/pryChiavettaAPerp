@@ -47,7 +47,7 @@ namespace pryChiavettaAPerp
 
         private bool ValidarCampos()
         {
-            if (string.IsNullOrEmpty(txtDNI.Text))
+            if (string.IsNullOrEmpty(maskedTextBox2.Text))
             {
                 MessageBox.Show("Por favor, ingrese el DNI.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -94,7 +94,7 @@ namespace pryChiavettaAPerp
 
         private void LimpiarFormulario()
         {
-            txtDNI.Text = "";
+            maskedTextBox2.Text = "";
             txtApellido.Text = "";
             txtNombre.Text = "";
             txtDireccion.Text = "";
@@ -109,6 +109,16 @@ namespace pryChiavettaAPerp
         }
 
         private void gbUbicacion_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

@@ -42,5 +42,11 @@ namespace pryChiavettaAPerp
         {
             this.Close();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+           FormPersonal formPersonal = new FormPersonal();
+            formPersonal.ShowDialog();
+        }
     }
 }
