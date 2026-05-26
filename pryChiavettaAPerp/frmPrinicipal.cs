@@ -1,12 +1,11 @@
 ﻿using System;
-using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace pryChiavettaAPerp
 {
-    public partial class Form1 : Form
+    public partial class frmPrinicipal : Form
     {
         // Variable para manejar la conexión a la base de datos
         private ConexionBD conexionBD;
@@ -15,7 +14,7 @@ namespace pryChiavettaAPerp
         private int intentosFallidos = 0;
         private int maximoIntentos = 3;
 
-        public Form1()
+        public frmPrinicipal()
         {
             InitializeComponent();
             conexionBD = new ConexionBD();
@@ -212,6 +211,11 @@ namespace pryChiavettaAPerp
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEstadoConexion_Click(object sender, EventArgs e)
         {
 
         }

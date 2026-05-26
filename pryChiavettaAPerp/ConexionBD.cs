@@ -1,5 +1,4 @@
 using System;
-using System;
 using System.Data.OleDb;
 using System.IO;
 using System.Windows.Forms;
@@ -12,17 +11,17 @@ namespace pryChiavettaAPerp
         // Cadena de conexión a Access - apunta a la carpeta base-dato
         private string cadenaConexion;
 
+       
         private string ObtenerCadenaConexion()
         {
-            string rutaBaseDatos = Path.Combine(Application.StartupPath, "Base-Datos", "BASEDATOSPERF1.accdb");
+            string directorioActual = AppDomain.CurrentDomain.BaseDirectory;
 
-            // Si no existe en la ruta de ejecución, intentar en la carpeta del proyecto
-            if (!File.Exists(rutaBaseDatos))
-            {
-                rutaBaseDatos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Base-Datos", "BASEDATOSPERF1.accdb");
-            }
+            string rutaBaseDatos  = Path.Combine(directorioActual, "..", "..", "Base-Datos", "BASEDATOSPERF1.accdb");
 
-            return $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={rutaBaseDatos};";
+            // Crear la cadena de conexión
+            string cadenaConexion = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={rutaBaseDatos};";
+            conexion = new OleDbConnection(cadenaConexion);
+            return cadenaConexion;
         }
 
         // Variable para almacenar la conexión

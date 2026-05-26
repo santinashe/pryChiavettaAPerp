@@ -42,5 +42,11 @@ namespace pryChiavettaAPerp
         {
             this.Close();
         }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            frmAdmin adminForm = new frmAdmin();
+            var result = adminForm.ShowDialog();
+        }
     }
 }
