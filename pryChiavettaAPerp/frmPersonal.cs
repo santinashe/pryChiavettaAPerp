@@ -290,10 +290,7 @@ namespace pryChiavettaAPerp
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Método auxiliar que realiza la limpieza efectiva de todos los controles.
-        /// Se reutiliza después de guardar y cuando el usuario clica "Limpiar".
-        /// </summary>
+        
         private void LimpiarFormulario()
         {
             // Limpiar TextBox
@@ -328,31 +325,23 @@ namespace pryChiavettaAPerp
             mtbDNI.Focus();
         }
 
-        // ============================================================================
-        //                  EVENTO DEL BOTÓN "CARGAR"
-        // ============================================================================
-
-        /// <summary>
-        /// Carga los datos de un usuario existente desde la BD.
-        /// (Por implementar según tus necesidades específicas)
-        /// </summary>
+       
         private void BtnCargar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Función de carga de usuario no implementada aún.", 
                 "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // TODO: Agregar lógica para buscar y cargar usuario existente
+           
         }
 
-        // ============================================================================
-        //                  EVENTO DEL BOTÓN "ATRÁS"
-        // ============================================================================
-
-        /// <summary>
-        /// Cierra este formulario y vuelve al anterior (formulario principal).
-        /// </summary>
+        
         private void BtnAtras_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

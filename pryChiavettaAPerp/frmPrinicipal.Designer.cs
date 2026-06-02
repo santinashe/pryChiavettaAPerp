@@ -45,65 +45,74 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTitulo.Location = new System.Drawing.Point(199, 19);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(150, 15);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(197, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(300, 37);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = " INICIO SESION ";
+            this.lblTitulo.Text = "INICIO DE SESIÓN";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblUsuario.Location = new System.Drawing.Point(150, 81);
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular);
+            this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblUsuario.Location = new System.Drawing.Point(150, 95);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(59, 16);
+            this.lblUsuario.Size = new System.Drawing.Size(59, 19);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "Usuario:";
             this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtUsuario.Location = new System.Drawing.Point(150, 98);
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
+            this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.txtUsuario.Location = new System.Drawing.Point(150, 116);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(301, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(301, 26);
             this.txtUsuario.TabIndex = 2;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblPassword.Location = new System.Drawing.Point(150, 130);
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular);
+            this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblPassword.Location = new System.Drawing.Point(150, 151);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(85, 16);
+            this.lblPassword.Size = new System.Drawing.Size(88, 19);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Contraseña:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Arial", 10F);
-            this.txtPassword.Location = new System.Drawing.Point(150, 146);
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.txtPassword.Location = new System.Drawing.Point(150, 172);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(301, 23);
+            this.txtPassword.Size = new System.Drawing.Size(301, 26);
             this.txtPassword.TabIndex = 4;
             // 
             // chkMostrar
             // 
             this.chkMostrar.AutoSize = true;
-            this.chkMostrar.Font = new System.Drawing.Font("Arial", 9F);
-            this.chkMostrar.Location = new System.Drawing.Point(150, 171);
+            this.chkMostrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.chkMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.chkMostrar.Location = new System.Drawing.Point(150, 204);
             this.chkMostrar.Margin = new System.Windows.Forms.Padding(2);
             this.chkMostrar.Name = "chkMostrar";
-            this.chkMostrar.Size = new System.Drawing.Size(132, 19);
+            this.chkMostrar.Size = new System.Drawing.Size(139, 19);
             this.chkMostrar.TabIndex = 5;
             this.chkMostrar.Text = "Mostrar contraseña";
             this.chkMostrar.UseVisualStyleBackColor = true;
@@ -111,13 +120,13 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnIngresar.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(310, 211);
+            this.btnIngresar.Location = new System.Drawing.Point(310, 251);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(194, 32);
+            this.btnIngresar.Size = new System.Drawing.Size(194, 36);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -126,34 +135,34 @@
             // lblEstadoConexion
             // 
             this.lblEstadoConexion.AutoSize = true;
-            this.lblEstadoConexion.Font = new System.Drawing.Font("Arial", 9F);
-            this.lblEstadoConexion.ForeColor = System.Drawing.Color.Red;
-            this.lblEstadoConexion.Location = new System.Drawing.Point(-3, 278);
+            this.lblEstadoConexion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblEstadoConexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEstadoConexion.Location = new System.Drawing.Point(-3, 310);
             this.lblEstadoConexion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEstadoConexion.Name = "lblEstadoConexion";
-            this.lblEstadoConexion.Size = new System.Drawing.Size(168, 15);
+            this.lblEstadoConexion.Size = new System.Drawing.Size(215, 15);
             this.lblEstadoConexion.TabIndex = 7;
             this.lblEstadoConexion.Text = "Base de datos desconectada";
             this.lblEstadoConexion.Click += new System.EventHandler(this.lblEstadoConexion_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Location = new System.Drawing.Point(0, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 65);
+            this.panel1.Size = new System.Drawing.Size(600, 70);
             this.panel1.TabIndex = 8;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
-            this.btnSalir.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(41, 211);
+            this.btnSalir.Location = new System.Drawing.Point(41, 251);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(194, 32);
+            this.btnSalir.Size = new System.Drawing.Size(194, 36);
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -162,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 321);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(600, 330);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEstadoConexion);

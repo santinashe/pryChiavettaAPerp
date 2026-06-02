@@ -73,7 +73,7 @@
             // 
             // grbContacto
             // 
-            this.grbContacto.BackColor = System.Drawing.Color.White;
+            this.grbContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.grbContacto.Controls.Add(this.checkedListBox1);
             this.grbContacto.Controls.Add(this.lblUsuarioRedes);
             this.grbContacto.Controls.Add(this.txtUsuarioRedes);
@@ -84,7 +84,8 @@
             this.grbContacto.Controls.Add(this.lblRedes);
             this.grbContacto.Controls.Add(this.lblTelefono);
             this.grbContacto.Controls.Add(this.lblmail);
-            this.grbContacto.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbContacto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbContacto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbContacto.Location = new System.Drawing.Point(403, 19);
             this.grbContacto.Name = "grbContacto";
             this.grbContacto.Size = new System.Drawing.Size(336, 356);
@@ -94,6 +95,8 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.BackColor = System.Drawing.Color.White;
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "Instagram",
@@ -109,7 +112,8 @@
             // lblUsuarioRedes
             // 
             this.lblUsuarioRedes.AutoSize = true;
-            this.lblUsuarioRedes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioRedes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblUsuarioRedes.Location = new System.Drawing.Point(24, 206);
             this.lblUsuarioRedes.Name = "lblUsuarioRedes";
             this.lblUsuarioRedes.Size = new System.Drawing.Size(53, 14);
@@ -118,38 +122,49 @@
             // 
             // txtUsuarioRedes
             // 
+            this.txtUsuarioRedes.BackColor = System.Drawing.Color.White;
+            this.txtUsuarioRedes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsuarioRedes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuarioRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtUsuarioRedes.Location = new System.Drawing.Point(85, 203);
             this.txtUsuarioRedes.Name = "txtUsuarioRedes";
-            this.txtUsuarioRedes.Size = new System.Drawing.Size(161, 21);
+            this.txtUsuarioRedes.Size = new System.Drawing.Size(161, 23);
             this.txtUsuarioRedes.TabIndex = 8;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(122, 230);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 27);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // mtbTelefono
             // 
+            this.mtbTelefono.BackColor = System.Drawing.Color.White;
+            this.mtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtbTelefono.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.mtbTelefono.Location = new System.Drawing.Point(85, 75);
             this.mtbTelefono.Mask = "000-000-0000";
             this.mtbTelefono.Name = "mtbTelefono";
-            this.mtbTelefono.Size = new System.Drawing.Size(161, 21);
+            this.mtbTelefono.Size = new System.Drawing.Size(161, 23);
             this.mtbTelefono.TabIndex = 6;
             // 
             // grbConexion
             // 
-            this.grbConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grbConexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(235)))), ((int)(((byte)(240)))));
             this.grbConexion.Controls.Add(this.chkInactivo);
             this.grbConexion.Controls.Add(this.chkActivo);
             this.grbConexion.Controls.Add(this.lblEstadoInactivo);
             this.grbConexion.Controls.Add(this.lblEstadoActivo);
-            this.grbConexion.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConexion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbConexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbConexion.Location = new System.Drawing.Point(27, 263);
             this.grbConexion.Name = "grbConexion";
             this.grbConexion.Size = new System.Drawing.Size(285, 80);
@@ -178,7 +193,7 @@
             // lblEstadoInactivo
             // 
             this.lblEstadoInactivo.AutoSize = true;
-            this.lblEstadoInactivo.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoInactivo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblEstadoInactivo.Location = new System.Drawing.Point(131, 35);
             this.lblEstadoInactivo.Name = "lblEstadoInactivo";
@@ -189,7 +204,7 @@
             // lblEstadoActivo
             // 
             this.lblEstadoActivo.AutoSize = true;
-            this.lblEstadoActivo.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoActivo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoActivo.ForeColor = System.Drawing.Color.Green;
             this.lblEstadoActivo.Location = new System.Drawing.Point(19, 35);
             this.lblEstadoActivo.Name = "lblEstadoActivo";
@@ -199,15 +214,20 @@
             // 
             // txtMail
             // 
+            this.txtMail.BackColor = System.Drawing.Color.White;
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtMail.Location = new System.Drawing.Point(85, 35);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(161, 21);
+            this.txtMail.Size = new System.Drawing.Size(161, 23);
             this.txtMail.TabIndex = 3;
             // 
             // lblRedes
             // 
             this.lblRedes.AutoSize = true;
-            this.lblRedes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblRedes.Location = new System.Drawing.Point(24, 153);
             this.lblRedes.Name = "lblRedes";
             this.lblRedes.Size = new System.Drawing.Size(44, 14);
@@ -217,7 +237,8 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTelefono.Location = new System.Drawing.Point(18, 78);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(55, 14);
@@ -227,7 +248,8 @@
             // lblmail
             // 
             this.lblmail.AutoSize = true;
-            this.lblmail.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblmail.Location = new System.Drawing.Point(36, 42);
             this.lblmail.Name = "lblmail";
             this.lblmail.Size = new System.Drawing.Size(32, 14);
@@ -236,14 +258,15 @@
             // 
             // grbDatosPersonales
             // 
-            this.grbDatosPersonales.BackColor = System.Drawing.Color.White;
+            this.grbDatosPersonales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.grbDatosPersonales.Controls.Add(this.mtbDNI);
             this.grbDatosPersonales.Controls.Add(this.txtApellido);
             this.grbDatosPersonales.Controls.Add(this.txtNombre);
             this.grbDatosPersonales.Controls.Add(this.lblAPELLIDO);
             this.grbDatosPersonales.Controls.Add(this.lblNOMBRE);
             this.grbDatosPersonales.Controls.Add(this.lblDNI);
-            this.grbDatosPersonales.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDatosPersonales.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbDatosPersonales.Location = new System.Drawing.Point(44, 19);
             this.grbDatosPersonales.Name = "grbDatosPersonales";
             this.grbDatosPersonales.Size = new System.Drawing.Size(353, 132);
@@ -253,30 +276,43 @@
             // 
             // mtbDNI
             // 
+            this.mtbDNI.BackColor = System.Drawing.Color.White;
+            this.mtbDNI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mtbDNI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.mtbDNI.Location = new System.Drawing.Point(85, 20);
             this.mtbDNI.Mask = "00000000";
             this.mtbDNI.Name = "mtbDNI";
-            this.mtbDNI.Size = new System.Drawing.Size(161, 21);
+            this.mtbDNI.Size = new System.Drawing.Size(161, 23);
             this.mtbDNI.TabIndex = 8;
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.Color.White;
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtApellido.Location = new System.Drawing.Point(85, 93);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(161, 21);
+            this.txtApellido.Size = new System.Drawing.Size(161, 23);
             this.txtApellido.TabIndex = 5;
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.White;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtNombre.Location = new System.Drawing.Point(85, 56);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(161, 21);
+            this.txtNombre.Size = new System.Drawing.Size(161, 23);
             this.txtNombre.TabIndex = 4;
             // 
             // lblAPELLIDO
             // 
             this.lblAPELLIDO.AutoSize = true;
-            this.lblAPELLIDO.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAPELLIDO.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAPELLIDO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblAPELLIDO.Location = new System.Drawing.Point(19, 96);
             this.lblAPELLIDO.Name = "lblAPELLIDO";
             this.lblAPELLIDO.Size = new System.Drawing.Size(53, 14);
@@ -286,7 +322,8 @@
             // lblNOMBRE
             // 
             this.lblNOMBRE.AutoSize = true;
-            this.lblNOMBRE.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNOMBRE.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNOMBRE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNOMBRE.Location = new System.Drawing.Point(19, 59);
             this.lblNOMBRE.Name = "lblNOMBRE";
             this.lblNOMBRE.Size = new System.Drawing.Size(51, 14);
@@ -296,7 +333,8 @@
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDNI.Location = new System.Drawing.Point(41, 23);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(29, 14);
@@ -305,9 +343,9 @@
             // 
             // btnAtras
             // 
-            this.btnAtras.BackColor = System.Drawing.Color.Red;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnAtras.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
             this.btnAtras.Location = new System.Drawing.Point(97, 391);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(43, 41);
@@ -317,8 +355,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(547, 397);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 29);
@@ -328,8 +367,9 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCargar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.ForeColor = System.Drawing.Color.White;
             this.btnCargar.Location = new System.Drawing.Point(628, 397);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 29);
@@ -339,14 +379,20 @@
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.BackColor = System.Drawing.Color.White;
+            this.cmbProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProvincia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.cmbProvincia.FormattingEnabled = true;
             this.cmbProvincia.Location = new System.Drawing.Point(162, 45);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(121, 22);
+            this.cmbProvincia.Size = new System.Drawing.Size(121, 23);
             this.cmbProvincia.TabIndex = 3;
             // 
             // cmbLocalidad
             // 
+            this.cmbLocalidad.BackColor = System.Drawing.Color.White;
+            this.cmbLocalidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLocalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.cmbLocalidad.FormattingEnabled = true;
             this.cmbLocalidad.Items.AddRange(new object[] {
             "Buenos Aires",
@@ -374,13 +420,14 @@
             "Tucumán"});
             this.cmbLocalidad.Location = new System.Drawing.Point(9, 45);
             this.cmbLocalidad.Name = "cmbLocalidad";
-            this.cmbLocalidad.Size = new System.Drawing.Size(114, 22);
+            this.cmbLocalidad.Size = new System.Drawing.Size(114, 23);
             this.cmbLocalidad.TabIndex = 2;
             // 
             // lblLOCALIDAD
             // 
             this.lblLOCALIDAD.AutoSize = true;
-            this.lblLOCALIDAD.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLOCALIDAD.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLOCALIDAD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLOCALIDAD.Location = new System.Drawing.Point(168, 28);
             this.lblLOCALIDAD.Name = "lblLOCALIDAD";
             this.lblLOCALIDAD.Size = new System.Drawing.Size(56, 14);
@@ -389,12 +436,13 @@
             // 
             // grbUbicacion
             // 
-            this.grbUbicacion.BackColor = System.Drawing.Color.White;
+            this.grbUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.grbUbicacion.Controls.Add(this.cmbProvincia);
             this.grbUbicacion.Controls.Add(this.cmbLocalidad);
             this.grbUbicacion.Controls.Add(this.lblPROVINCIA);
             this.grbUbicacion.Controls.Add(this.lblLOCALIDAD);
-            this.grbUbicacion.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUbicacion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbUbicacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbUbicacion.Location = new System.Drawing.Point(44, 157);
             this.grbUbicacion.Name = "grbUbicacion";
             this.grbUbicacion.Size = new System.Drawing.Size(353, 86);
@@ -405,7 +453,8 @@
             // lblPROVINCIA
             // 
             this.lblPROVINCIA.AutoSize = true;
-            this.lblPROVINCIA.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPROVINCIA.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPROVINCIA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPROVINCIA.Location = new System.Drawing.Point(6, 28);
             this.lblPROVINCIA.Name = "lblPROVINCIA";
             this.lblPROVINCIA.Size = new System.Drawing.Size(53, 14);
@@ -414,17 +463,21 @@
             // 
             // btnMapa
             // 
+            this.btnMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnMapa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMapa.ForeColor = System.Drawing.Color.White;
             this.btnMapa.Location = new System.Drawing.Point(116, 80);
             this.btnMapa.Name = "btnMapa";
             this.btnMapa.Size = new System.Drawing.Size(161, 23);
             this.btnMapa.TabIndex = 7;
             this.btnMapa.Text = "Mapa";
-            this.btnMapa.UseVisualStyleBackColor = true;
+            this.btnMapa.UseVisualStyleBackColor = false;
             // 
             // lblGeo
             // 
             this.lblGeo.AutoSize = true;
-            this.lblGeo.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblGeo.Location = new System.Drawing.Point(19, 84);
             this.lblGeo.Name = "lblGeo";
             this.lblGeo.Size = new System.Drawing.Size(91, 14);
@@ -434,7 +487,8 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDireccion.Location = new System.Drawing.Point(32, 36);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(58, 14);
@@ -443,12 +497,13 @@
             // 
             // grbDomicilio
             // 
-            this.grbDomicilio.BackColor = System.Drawing.Color.White;
+            this.grbDomicilio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.grbDomicilio.Controls.Add(this.btnMapa);
             this.grbDomicilio.Controls.Add(this.txtDireccion);
             this.grbDomicilio.Controls.Add(this.lblGeo);
             this.grbDomicilio.Controls.Add(this.lblDireccion);
-            this.grbDomicilio.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDomicilio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbDomicilio.Location = new System.Drawing.Point(44, 249);
             this.grbDomicilio.Name = "grbDomicilio";
             this.grbDomicilio.Size = new System.Drawing.Size(353, 126);
@@ -458,15 +513,20 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.BackColor = System.Drawing.Color.White;
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtDireccion.Location = new System.Drawing.Point(116, 33);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(161, 21);
+            this.txtDireccion.Size = new System.Drawing.Size(161, 23);
             this.txtDireccion.TabIndex = 6;
             // 
             // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grbContacto);
             this.Controls.Add(this.grbDatosPersonales);
