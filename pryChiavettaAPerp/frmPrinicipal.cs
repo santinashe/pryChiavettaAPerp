@@ -95,7 +95,7 @@ namespace pryChiavettaAPerp
                     string apellidoUsuario = datosUsuario.Rows[0]["Apellido"].ToString();
 
                     // Abrir el formulario de bienvenida
-                    FormBienvenida formBienvenida = new FormBienvenida(nombreUsuario, apellidoUsuario);
+                    frmBienvenida formBienvenida = new frmBienvenida(nombreUsuario, apellidoUsuario);
                     formBienvenida.ShowDialog();
 
                     // Limpiar los campos

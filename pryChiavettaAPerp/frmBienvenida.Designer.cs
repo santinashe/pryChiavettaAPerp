@@ -1,6 +1,6 @@
 namespace pryChiavettaAPerp
 {
-    partial class FormBienvenida
+    partial class frmBienvenida
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,6 +28,7 @@ namespace pryChiavettaAPerp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBienvenida));
             this.lblTituloOK = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
@@ -54,33 +55,33 @@ namespace pryChiavettaAPerp
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Arial", 12F);
-            this.lblFecha.Location = new System.Drawing.Point(78, 183);
+            this.lblFecha.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(23, 183);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(56, 18);
+            this.lblFecha.Size = new System.Drawing.Size(62, 19);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Fecha:";
             // 
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Arial", 12F);
-            this.lblHora.Location = new System.Drawing.Point(78, 147);
+            this.lblHora.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(23, 131);
             this.lblHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(46, 18);
+            this.lblHora.Size = new System.Drawing.Size(52, 19);
             this.lblHora.TabIndex = 2;
             this.lblHora.Text = "Hora:";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Arial", 12F);
-            this.lblUsuario.Location = new System.Drawing.Point(78, 106);
+            this.lblUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(23, 84);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(66, 18);
+            this.lblUsuario.Size = new System.Drawing.Size(75, 19);
             this.lblUsuario.TabIndex = 3;
             this.lblUsuario.Text = "Usuario:";
             // 
@@ -131,7 +132,7 @@ namespace pryChiavettaAPerp
             this.panel1.Size = new System.Drawing.Size(362, 60);
             this.panel1.TabIndex = 7;
             // 
-            // FormBienvenida
+            // frmBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,8 +144,9 @@ namespace pryChiavettaAPerp
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblFecha);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormBienvenida";
+            this.Name = "frmBienvenida";
             this.Text = "Bienvenida";
             this.Load += new System.EventHandler(this.FormBienvenida_Load);
             this.panel1.ResumeLayout(false);

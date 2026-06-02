@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pryChiavettaAPerp
 {
-    public partial class frmAdmin : Form
+    public partial class frmGestionAuditoria : Form
     {
-        public frmAdmin()
+        public frmGestionAuditoria()
         {
             InitializeComponent();
         }

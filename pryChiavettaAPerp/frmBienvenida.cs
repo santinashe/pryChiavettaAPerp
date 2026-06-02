@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace pryChiavettaAPerp
 {
-    public partial class FormBienvenida : Form
+    public partial class frmBienvenida : Form
     {
         // Variables para almacenar los datos del usuario
         private string nombreUsuario;
         private string rolUsuario;
 
         // Constructor que recibe los datos del usuario
-        public FormBienvenida(string usuario, string rol)
+        public frmBienvenida(string usuario, string rol)
         {
             InitializeComponent();
             nombreUsuario = usuario;
@@ -45,8 +45,8 @@ namespace pryChiavettaAPerp
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            frmAdmin adminForm = new frmAdmin();
-            var result = adminForm.ShowDialog();
+           frmAcciones accionesForm = new frmAcciones();
+            accionesForm.ShowDialog();
         }
     }
 }

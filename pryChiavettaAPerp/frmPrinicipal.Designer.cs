@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrinicipal));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,12 +47,12 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblTitulo.Location = new System.Drawing.Point(135, 17);
+            this.lblTitulo.Location = new System.Drawing.Point(199, 19);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(337, 29);
+            this.lblTitulo.Size = new System.Drawing.Size(197, 29);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "SISTEMA DE INICIO SESION";
+            this.lblTitulo.Text = " INICIO SESION ";
             // 
             // lblUsuario
             // 
@@ -68,7 +70,7 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Arial", 10F);
             this.txtUsuario.Location = new System.Drawing.Point(150, 98);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(301, 23);
             this.txtUsuario.TabIndex = 2;
@@ -88,7 +90,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Arial", 10F);
             this.txtPassword.Location = new System.Drawing.Point(150, 146);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(301, 23);
@@ -99,7 +101,7 @@
             this.chkMostrar.AutoSize = true;
             this.chkMostrar.Font = new System.Drawing.Font("Arial", 9F);
             this.chkMostrar.Location = new System.Drawing.Point(150, 171);
-            this.chkMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkMostrar.Margin = new System.Windows.Forms.Padding(2);
             this.chkMostrar.Name = "chkMostrar";
             this.chkMostrar.Size = new System.Drawing.Size(132, 19);
             this.chkMostrar.TabIndex = 5;
@@ -112,10 +114,10 @@
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnIngresar.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(225, 211);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresar.Location = new System.Drawing.Point(310, 211);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(150, 32);
+            this.btnIngresar.Size = new System.Drawing.Size(194, 32);
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -143,11 +145,25 @@
             this.panel1.Size = new System.Drawing.Size(598, 65);
             this.panel1.TabIndex = 8;
             // 
-            // Form1
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(41, 211);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(194, 32);
+            this.btnSalir.TabIndex = 9;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            // 
+            // frmPrinicipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 321);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblEstadoConexion);
             this.Controls.Add(this.btnIngresar);
@@ -156,8 +172,9 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmPrinicipal";
             this.Text = "AP ERP - Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -178,6 +195,7 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label lblEstadoConexion;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 
