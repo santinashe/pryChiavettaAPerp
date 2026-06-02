@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonal));
             this.grbContacto = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.lblUsuarioRedes = new System.Windows.Forms.Label();
             this.txtUsuarioRedes = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.grbDomicilio = new System.Windows.Forms.GroupBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.grbContacto.SuspendLayout();
             this.grbConexion.SuspendLayout();
             this.grbDatosPersonales.SuspendLayout();
@@ -91,6 +91,20 @@
             this.grbContacto.TabIndex = 12;
             this.grbContacto.TabStop = false;
             this.grbContacto.Text = "Contacto";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Instagram",
+            "Tiktok",
+            "X",
+            "Telegram",
+            "Facebook"});
+            this.checkedListBox1.Location = new System.Drawing.Point(103, 113);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 84);
+            this.checkedListBox1.TabIndex = 11;
             // 
             // lblUsuarioRedes
             // 
@@ -334,6 +348,30 @@
             // cmbLocalidad
             // 
             this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Items.AddRange(new object[] {
+            "Buenos Aires",
+            "Catamarca",
+            "Chaco",
+            "Chubut",
+            "Córdoba",
+            "Corrientes",
+            "Entre Ríos",
+            "Formosa",
+            "Jujuy",
+            "La Pampa",
+            "La Rioja",
+            "Mendoza",
+            "Misiones",
+            "Neuquén",
+            "Río Negro",
+            "Salta",
+            "San Juan",
+            "San Luis",
+            "Santa Cruz",
+            "Santa Fe",
+            "Santiago del Estero",
+            "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+            "Tucumán"});
             this.cmbLocalidad.Location = new System.Drawing.Point(9, 45);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(114, 22);
@@ -343,7 +381,7 @@
             // 
             this.lblLOCALIDAD.AutoSize = true;
             this.lblLOCALIDAD.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLOCALIDAD.Location = new System.Drawing.Point(6, 28);
+            this.lblLOCALIDAD.Location = new System.Drawing.Point(168, 28);
             this.lblLOCALIDAD.Name = "lblLOCALIDAD";
             this.lblLOCALIDAD.Size = new System.Drawing.Size(56, 14);
             this.lblLOCALIDAD.TabIndex = 0;
@@ -368,7 +406,7 @@
             // 
             this.lblPROVINCIA.AutoSize = true;
             this.lblPROVINCIA.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPROVINCIA.Location = new System.Drawing.Point(159, 28);
+            this.lblPROVINCIA.Location = new System.Drawing.Point(6, 28);
             this.lblPROVINCIA.Name = "lblPROVINCIA";
             this.lblPROVINCIA.Size = new System.Drawing.Size(53, 14);
             this.lblPROVINCIA.TabIndex = 1;
@@ -424,20 +462,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(161, 21);
             this.txtDireccion.TabIndex = 6;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Instagram",
-            "Tiktok",
-            "X",
-            "Telegram",
-            "Facebook"});
-            this.checkedListBox1.Location = new System.Drawing.Point(103, 113);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 84);
-            this.checkedListBox1.TabIndex = 11;
             // 
             // frmPersonal
             // 
