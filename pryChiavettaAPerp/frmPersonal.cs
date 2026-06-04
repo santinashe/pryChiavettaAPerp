@@ -137,16 +137,22 @@ namespace pryChiavettaAPerp
         /// </summary>
         private bool GuardarUsuario()
         {
+           
+            
             try
             {
+               
+
+
+
                 // Paso 1: Construir la consulta SQL con parámetros
                 // Los símbolos @ indican que lo que sigue es un parámetro, no un texto literal
                 // Esto es SEGURO contra inyección SQL
                 string consulta = @"
-                    INSERT INTO Usuario 
-                    (DNI, Nombre, Apellido, Mail, Telefono, Direccion, Provincia, Localidad, Latitud, Longitud, UsuarioRedes, Estado) 
+                    INSERT INTO Personal 
+                    (Dni, Nombre, Apellido, Direccion, Provincia, Localidad, Actividad) 
                     VALUES 
-                    (@dni, @nombre, @apellido, @mail, @telefono, @direccion, @provincia, @localidad, @latitud, @longitud, @usuarioRedes, @estado)";
+                    (@dni, @nombre, @apellido, @direccion, @provincia, @localidad, @actividad)";
 
                 // Paso 2: Crear un array con todos los parámetros
                 // Cada parámetro tiene un nombre (@) y un valor (el contenido del textbox)
@@ -155,13 +161,9 @@ namespace pryChiavettaAPerp
                     new OleDbParameter("@dni", mtbDNI.Text.Trim()),
                     new OleDbParameter("@nombre", txtNombre.Text.Trim()),
                     new OleDbParameter("@apellido", txtApellido.Text.Trim()),
-                    new OleDbParameter("@mail", txtMail.Text.Trim()),
-                    new OleDbParameter("@telefono", mtbTelefono.Text.Trim()),
                     new OleDbParameter("@direccion", txtDireccion.Text.Trim()),
                     new OleDbParameter("@provincia", cmbProvincia.SelectedItem?.ToString() ?? ""),
-                    new OleDbParameter("@localidad", cmbLocalidad.SelectedItem?.ToString() ?? ""),
-                    new OleDbParameter("@latitud", latitudActual),
-                    new OleDbParameter("@longitud", longitudActual),
+                    new OleDbParameter("@localidad", cmbLocalidad.SelectedItem?.ToString() ?? ""),                 
                     new OleDbParameter("@usuarioRedes", txtUsuarioRedes.Text.Trim()),
                     // Si chkActivo está marcado, el estado es "Activo", si no, es "Inactivo"
                     new OleDbParameter("@estado", chkActivo.Checked ? "Activo" : "Inactivo")
@@ -187,18 +189,7 @@ namespace pryChiavettaAPerp
             }
         }
 
-        // ============================================================================
-        //                    GUARDADO DE REDES SELECCIONADAS
-        // ============================================================================
-
-        /// <summary>
-        /// Guarda cada red social seleccionada en la tabla "Redes".
-        /// Itera sobre los elementos marcados en el CheckedListBox.
-        /// 
-        /// Explicación del CheckedListBox:
-        /// - CheckedItems contiene solo los elementos que el usuario marcó
-        /// - Iteramos sobre ellos y guardamos cada uno en la BD asociado al ID del usuario
-        /// </summary>
+        
         private void GuardarRedesSeleccionadas()
         {
             try
@@ -211,38 +202,37 @@ namespace pryChiavettaAPerp
 
                     // Construir la consulta INSERT para la tabla Redes
                     string consulta = @"
-                        INSERT INTO Redes 
-                        (IDUsuario, NombreRed) 
-                        VALUES 
-                        (@idUsuario, @nombreRed)";
+                    INSERT INTO Redes
+                    (Instagram, Tiktok, [X], Telegram, Facebook, Mail, Telefono)
+                    VALUES
+                    (@instagram, @tiktok, @x, @telegram, @facebook, @mail, @telefono)";
 
-                    // Crear los parámetros para esta red
                     OleDbParameter[] parametros = new OleDbParameter[]
                     {
-                        new OleDbParameter("@idUsuario", idUsuarioActual),
-                        new OleDbParameter("@nombreRed", red)
+                         new OleDbParameter("@instagram", checkedListBox1.Items[indice].ToString()),
+                         new OleDbParameter("@tiktok", checkedListBox1.Items[indice].ToString()),
+                         new OleDbParameter("@x", checkedListBox1.Items[indice].ToString()),
+                         new OleDbParameter("@facebook", checkedListBox1.Items[indice].ToString()),
+                         new OleDbParameter("@mail", txtMail.Text.Trim()),
+                         new OleDbParameter("@telefono", mtbTelefono.Text.Trim())
                     };
 
-                    // Ejecutar el INSERT
-                    // Nota: No necesitamos verificar el resultado aquí, pero podrías hacerlo
-                    OperacionesBD.EjecutarComando(consulta, parametros);
+                    // Paso 4: Ejecutar el comando INSERT para la tabla Redes
+                    bool resultadoRedes = OperacionesBD.EjecutarComando(consulta, parametros);
+
+                    if (!resultadoRedes)
+                    {
+                        MessageBox.Show("Error al guardar redes sociales.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar redes:\n{ex.Message}", 
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al guardar redes sociales:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // ============================================================================
-        //                  EVENTO DEL BOTÓN "MAPA" (GEOLOCALIZACIÓN)
-        // ============================================================================
 
-        /// <summary>
-        /// Abre Google Maps en el navegador con las coordenadas del usuario.
-        /// También puede simular coordenadas de geolocalización.
-        /// </summary>
         private void BtnMapa_Click(object sender, EventArgs e)
         {
             try
