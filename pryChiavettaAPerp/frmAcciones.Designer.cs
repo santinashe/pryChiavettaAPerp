@@ -57,7 +57,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(346, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 19);
+            this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "-Bienvenido-";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -69,7 +69,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.label1.Location = new System.Drawing.Point(250, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 25);
+            this.label1.Size = new System.Drawing.Size(202, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione una opción";
             // 
@@ -137,6 +137,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAcciones";
             this.Text = "frmAcciones";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
