@@ -16,7 +16,7 @@ namespace pryChiavettaAPerp
         {
             string directorioActual = AppDomain.CurrentDomain.BaseDirectory;
 
-            string rutaBaseDatos  = Path.Combine(directorioActual, "..", "..", "Base-Datos", "BASEDATOSPERF1.accdb");
+            string rutaBaseDatos  = Path.GetFullPath(Path.Combine(directorioActual, "..", "..", "Base-Datos", "BASEDATOSPERF1.accdb"));
 
             // Crear la cadena de conexión
             string cadenaConexion = $"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={rutaBaseDatos};";

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
@@ -7,12 +7,13 @@ namespace pryChiavettaAPerp
 {
     public partial class frmPrinicipal : Form
     {
-        // Variable para manejar la conexión a la base de datos
-        private ConexionBD conexionBD;
+        #region Campos
 
-        // Contador de intentos fallidos
+        private ConexionBD conexionBD;
         private int intentosFallidos = 0;
         private int maximoIntentos = 3;
+
+        #endregion
 
         public frmPrinicipal()
         {
@@ -20,204 +21,150 @@ namespace pryChiavettaAPerp
             conexionBD = new ConexionBD();
         }
 
-        // Evento que se ejecuta cuando carga el formulario
+        #region Eventos
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Configurar la contraseña para que se vea con asteriscos
             txtPassword.PasswordChar = '*';
-
-            // Verificar el estado de la conexión cuando inicia
             ActualizarEstadoConexion();
 
-            // Crear un Timer para actualizar el estado cada 2 segundos
             Timer timerConexion = new Timer();
             timerConexion.Interval = 2000;
             timerConexion.Tick += (s, args) => ActualizarEstadoConexion();
             timerConexion.Start();
         }
 
-        // Método para actualizar el label del estado de la conexión
-        private void ActualizarEstadoConexion()
-        {
-            if (conexionBD.VerificarConexion())
-            {
-                // Si está conectada, mostrar en verde
-                lblEstadoConexion.Text = "✓ Base de datos conectada";
-                lblEstadoConexion.ForeColor = System.Drawing.Color.Green;
-            }
-            else
-            {
-                // Si no está conectada, mostrar en rojo
-                lblEstadoConexion.Text = "✗ Base de datos desconectada";
-                lblEstadoConexion.ForeColor = System.Drawing.Color.Red;
-            }
-        }
-
-        // Evento del CheckBox para mostrar/ocultar contraseña
         private void chkMostrar_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMostrar.Checked)
-            {
-                // Si está marcado, mostrar la contraseña
-                txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                // Si no está marcado, ocultarla con asteriscos
-                txtPassword.PasswordChar = '*';
-            }
+            txtPassword.PasswordChar = chkMostrar.Checked ? '\0' : '*';
         }
 
-        // Evento del botón Ingresar
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            // Obtener los valores ingresados
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
+            string usuario = txtUsuario.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            // Validar que no estén vacíos
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Por favor, completa todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validar contra la base de datos
-            if (ValidarCredenciales(usuario, password))
+            try
             {
-                // Si es correcto, obtener los datos del usuario
-                DataTable datosUsuario = ObtenerDatosUsuario(usuario);
+                DataTable datosUsuario = ObtenerDatosUsuario(usuario, password);
 
                 if (datosUsuario.Rows.Count > 0)
                 {
-                    // Obtener información del usuario
-                    string nombreUsuario = datosUsuario.Rows[0]["Nombre"].ToString();
-                    string apellidoUsuario = datosUsuario.Rows[0]["Apellido"].ToString();
+                    CargarSesion(datosUsuario.Rows[0]);
+                    AuditoriaServicio.RegistrarAuditoria("frmPrinicipal", "Inicio de sesi�n", "Login correcto");
 
-                    // Abrir el formulario de bienvenida
-                    frmBienvenida formBienvenida = new frmBienvenida(nombreUsuario, apellidoUsuario);
+                    frmBienvenida formBienvenida = new frmBienvenida(
+                        SesionActual.Nombre + " " + SesionActual.Apellido,
+                        SesionActual.Rol);
+
+                    Hide();
                     formBienvenida.ShowDialog();
+                    Show();
 
-                    // Limpiar los campos
-                    txtUsuario.Text = "";
-                    txtPassword.Text = "";
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
                     intentosFallidos = 0;
-                }
-            }
-            else
-            {
-                // Contar los intentos fallidos
-                intentosFallidos++;
-                int intentosRestantes = maximoIntentos - intentosFallidos;
-
-                // Si todavía hay intentos
-                if (intentosRestantes > 0)
-                {
-                    MessageBox.Show($"Usuario o contraseña incorrectos.\nIntentos restantes: {intentosRestantes}", 
-                        "Error de login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    // Limpiar solo la contraseña
-                    txtPassword.Text = "";
-                }
-                else
-                {
-                    // Si se acabaron los intentos
-                    MessageBox.Show("Cantidad máxima de intentos superada.\nLa aplicación se cerrará.", 
-                        "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-
-                    // Cerrar la aplicación
-                    Application.Exit();
-                }
-            }
-        }
-
-        // Método para validar las credenciales contra la base de datos
-        private bool ValidarCredenciales(string usuario, string password)
-        {
-            try
-            {
-                // Abrir conexión
-                conexionBD.AbrirConexion();
-
-                // Crear la consulta para Access (sin TRIM)
-                string consulta = "SELECT * FROM Usuario WHERE Nombre = @usuario AND Contraseña = @password";
-
-                OleDbCommand comando = new OleDbCommand(consulta, conexionBD.ObtenerConexion());
-
-                // Agregar los parámetros para evitar inyección 
-                comando.Parameters.AddWithValue("@usuario", usuario.Trim());
-                comando.Parameters.AddWithValue("@password", password.Trim());
-
-                // DEBUG: Mostrar qué se está buscando
-                System.Diagnostics.Debug.WriteLine($"Buscando usuario: '{usuario}' con contraseña: '{password}'");
-
-                // Ejecutar la consulta
-                OleDbDataAdapter adaptador = new OleDbDataAdapter(comando);
-                DataTable resultado = new DataTable();
-                adaptador.Fill(resultado);
-
-                // DEBUG: Mostrar cantidad de filas encontradas
-                System.Diagnostics.Debug.WriteLine($"Filas encontradas: {resultado.Rows.Count}");
-
-                if (resultado.Rows.Count > 0)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Usuario encontrado: {resultado.Rows[0]["Nombre"]}");
+                    return;
                 }
 
-                // Si encontró un registro, devolver true
-                bool esValido = resultado.Rows.Count > 0;
-
-                // Cerrar conexión después de obtener los datos
-                conexionBD.CerrarConexion();
-
-                return esValido;
+                RegistrarLoginFallido(usuario);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al validar credenciales: " + ex.Message);
-                System.Diagnostics.Debug.WriteLine($"Excepción: {ex.Message}");
-                return false;
-            }
-        }
-
-        // Método para obtener los datos del usuario
-        private DataTable ObtenerDatosUsuario(string usuario)
-        {
-            try
-            {
-                // Abrir conexión
-                conexionBD.AbrirConexion();
-
-                // Consulta para obtener los datos
-                string consulta = "SELECT Nombre, Apellido FROM Usuario WHERE Nombre = @usuario";
-
-                OleDbCommand comando = new OleDbCommand(consulta, conexionBD.ObtenerConexion());
-                comando.Parameters.AddWithValue("@usuario", usuario);
-
-                OleDbDataAdapter adaptador = new OleDbDataAdapter(comando);
-                DataTable resultado = new DataTable();
-                adaptador.Fill(resultado);
-
-                // Cerrar conexión después de obtener los datos
-                conexionBD.CerrarConexion();
-
-                return resultado;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener datos del usuario: " + ex.Message);
-                return new DataTable();
+                AuditoriaServicio.RegistrarAuditoria("frmPrinicipal", "Error", ex.Message);
+                MessageBox.Show("Error al validar credenciales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
-
         }
 
         private void lblEstadoConexion_Click(object sender, EventArgs e)
         {
-
         }
+
+        #endregion
+
+        #region Login
+
+        private DataTable ObtenerDatosUsuario(string usuario, string password)
+        {
+            string consulta = @"SELECT TOP 1 u.[IdUsuario], u.[Nombre], u.[Apellido], u.[Mail], u.[Contrase�a], p.[Nombre] AS [Perfil]
+                FROM ([Usuario] u
+                LEFT JOIN [RelacionUsuarioPerfil] r ON CStr(u.[IdUsuario]) = r.[IdUsuario])
+                LEFT JOIN [Perfil] p ON CStr(p.[IdPerfil]) = r.[IdPerfil]
+                WHERE u.[Nombre] = ? AND u.[Contrase�a] = ?";
+
+            return OperacionesBD.ObtenerDatos(consulta, new OleDbParameter[]
+            {
+                new OleDbParameter("?", usuario),
+                new OleDbParameter("?", password)
+            });
+        }
+
+        private void CargarSesion(DataRow fila)
+        {
+            SesionActual.IdUsuario = Convert.ToInt32(fila["IdUsuario"]);
+            SesionActual.Nombre = fila["Nombre"].ToString();
+            SesionActual.Apellido = fila["Apellido"].ToString();
+            SesionActual.Mail = fila["Mail"].ToString();
+            SesionActual.Rol = PermisosServicio.NormalizarRol(fila["Perfil"].ToString());
+            SesionActual.FechaIngreso = DateTime.Now;
+        }
+
+        private void RegistrarLoginFallido(string usuario)
+        {
+            intentosFallidos++;
+            int intentosRestantes = maximoIntentos - intentosFallidos;
+
+            AuditoriaServicio.RegistrarAuditoria("frmPrinicipal", "Error", "Login fallido para usuario: " + usuario);
+
+            if (intentosRestantes > 0)
+            {
+                MessageBox.Show(
+                    "Usuario o contrase�a incorrectos.\nIntentos restantes: " + intentosRestantes,
+                    "Error de login",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                txtPassword.Clear();
+                return;
+            }
+
+            MessageBox.Show(
+                "Cantidad m�xima de intentos superada.\nLa aplicaci�n se cerrar�.",
+                "Acceso denegado",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Stop);
+
+            Application.Exit();
+        }
+
+        #endregion
+
+        #region Conexion
+
+        private void ActualizarEstadoConexion()
+        {
+            if (conexionBD.VerificarConexion())
+            {
+                lblEstadoConexion.Text = "Base de datos conectada";
+                lblEstadoConexion.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                lblEstadoConexion.Text = "Base de datos desconectada";
+                lblEstadoConexion.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        #endregion
     }
 }

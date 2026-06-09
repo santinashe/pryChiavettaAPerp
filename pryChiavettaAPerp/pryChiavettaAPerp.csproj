@@ -101,7 +101,14 @@
     </Compile>
     <Compile Include="GeolocalizacionHelper.cs" />
     <Compile Include="OperacionesBD.cs" />
+    <Compile Include="AuditoriaServicio.cs" />
+    <Compile Include="PermisosServicio.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="SesionActual.cs" />
+    <Compile Include="UsuarioServicio.cs" />
+    <Compile Include="frmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAcciones.resx">
       <DependentUpon>frmAcciones.cs</DependentUpon>

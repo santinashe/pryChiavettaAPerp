@@ -26,7 +26,7 @@ namespace pryChiavettaAPerp
             // Estructura: pryChiavettaAPerp -> Base-Datos -> BASEDATOSPERF1.accdb
             string rutaBD = Path.Combine(directorioActual, "..", "..", "Base-Datos", "BASEDATOSPERF1.accdb");
 
-            return rutaBD;
+            return Path.GetFullPath(rutaBD);
         }
 
         /// <summary>
@@ -44,5 +44,8 @@ namespace pryChiavettaAPerp
         // Constantes para los nombres de las tablas en la BD
         public const string TABLA_USUARIO = "Usuario";
         public const string TABLA_REDES = "Redes";
+        public const string TABLA_PERFIL = "Perfil";
+        public const string TABLA_RELACION_USUARIO_PERFIL = "RelacionUsuarioPerfil";
+        public const string TABLA_AUDITORIA = "Auditoria";
     }
 }

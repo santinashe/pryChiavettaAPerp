@@ -47,6 +47,7 @@ namespace pryChiavettaAPerp
             }
             catch (Exception ex)
             {
+                AuditoriaServicio.RegistrarAuditoria("OperacionesBD", "Error", ex.Message + "\n" + consulta);
                 MessageBox.Show($"Error al ejecutar comando:\n{ex.Message}", 
                     "Error de Base de Datos", 
                     MessageBoxButtons.OK, 
@@ -87,6 +88,7 @@ namespace pryChiavettaAPerp
             }
             catch (Exception ex)
             {
+                AuditoriaServicio.RegistrarAuditoria("OperacionesBD", "Error", ex.Message + "\n" + consulta);
                 MessageBox.Show($"Error al obtener datos:\n{ex.Message}", 
                     "Error de Base de Datos", 
                     MessageBoxButtons.OK, 
