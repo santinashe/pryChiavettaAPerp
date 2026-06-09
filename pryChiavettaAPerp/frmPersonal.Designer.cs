@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPersonal));
             this.grbContacto = new System.Windows.Forms.GroupBox();
+            this.btnQuitarRed = new System.Windows.Forms.Button();
+            this.lstRedes = new System.Windows.Forms.ListBox();
+            this.btnQuitarTelefono = new System.Windows.Forms.Button();
+            this.btnAgregarTelefono = new System.Windows.Forms.Button();
+            this.lstTelefonos = new System.Windows.Forms.ListBox();
+            this.btnQuitarMail = new System.Windows.Forms.Button();
+            this.btnAgregarMail = new System.Windows.Forms.Button();
+            this.lstMails = new System.Windows.Forms.ListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.lblUsuarioRedes = new System.Windows.Forms.Label();
             this.txtUsuarioRedes = new System.Windows.Forms.TextBox();
@@ -63,7 +71,9 @@
             this.lblGeo = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.grbDomicilio = new System.Windows.Forms.GroupBox();
+            this.txtGeo = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.btnCargarTodo = new System.Windows.Forms.Button();
             this.grbContacto.SuspendLayout();
             this.grbConexion.SuspendLayout();
             this.grbDatosPersonales.SuspendLayout();
@@ -74,6 +84,14 @@
             // grbContacto
             // 
             this.grbContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
+            this.grbContacto.Controls.Add(this.btnQuitarRed);
+            this.grbContacto.Controls.Add(this.lstRedes);
+            this.grbContacto.Controls.Add(this.btnQuitarTelefono);
+            this.grbContacto.Controls.Add(this.btnAgregarTelefono);
+            this.grbContacto.Controls.Add(this.lstTelefonos);
+            this.grbContacto.Controls.Add(this.btnQuitarMail);
+            this.grbContacto.Controls.Add(this.btnAgregarMail);
+            this.grbContacto.Controls.Add(this.lstMails);
             this.grbContacto.Controls.Add(this.checkedListBox1);
             this.grbContacto.Controls.Add(this.lblUsuarioRedes);
             this.grbContacto.Controls.Add(this.txtUsuarioRedes);
@@ -88,10 +106,102 @@
             this.grbContacto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbContacto.Location = new System.Drawing.Point(403, 19);
             this.grbContacto.Name = "grbContacto";
-            this.grbContacto.Size = new System.Drawing.Size(336, 356);
+            this.grbContacto.Size = new System.Drawing.Size(336, 470);
             this.grbContacto.TabIndex = 12;
             this.grbContacto.TabStop = false;
             this.grbContacto.Text = "Contacto";
+            // 
+            // btnQuitarRed
+            // 
+            this.btnQuitarRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.btnQuitarRed.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarRed.ForeColor = System.Drawing.Color.White;
+            this.btnQuitarRed.Location = new System.Drawing.Point(252, 441);
+            this.btnQuitarRed.Name = "btnQuitarRed";
+            this.btnQuitarRed.Size = new System.Drawing.Size(60, 23);
+            this.btnQuitarRed.TabIndex = 19;
+            this.btnQuitarRed.Text = "Quitar";
+            this.btnQuitarRed.UseVisualStyleBackColor = false;
+            this.btnQuitarRed.Click += new System.EventHandler(this.btnQuitarRed_Click);
+            // 
+            // lstRedes
+            // 
+            this.lstRedes.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lstRedes.FormattingEnabled = true;
+            this.lstRedes.Location = new System.Drawing.Point(7, 421);
+            this.lstRedes.Name = "lstRedes";
+            this.lstRedes.Size = new System.Drawing.Size(219, 43);
+            this.lstRedes.TabIndex = 18;
+            // 
+            // btnQuitarTelefono
+            // 
+            this.btnQuitarTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.btnQuitarTelefono.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarTelefono.ForeColor = System.Drawing.Color.White;
+            this.btnQuitarTelefono.Location = new System.Drawing.Point(252, 156);
+            this.btnQuitarTelefono.Name = "btnQuitarTelefono";
+            this.btnQuitarTelefono.Size = new System.Drawing.Size(60, 23);
+            this.btnQuitarTelefono.TabIndex = 17;
+            this.btnQuitarTelefono.Text = "Quitar";
+            this.btnQuitarTelefono.UseVisualStyleBackColor = false;
+            this.btnQuitarTelefono.Click += new System.EventHandler(this.btnQuitarTelefono_Click);
+            // 
+            // btnAgregarTelefono
+            // 
+            this.btnAgregarTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAgregarTelefono.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarTelefono.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarTelefono.Location = new System.Drawing.Point(252, 118);
+            this.btnAgregarTelefono.Name = "btnAgregarTelefono";
+            this.btnAgregarTelefono.Size = new System.Drawing.Size(60, 23);
+            this.btnAgregarTelefono.TabIndex = 16;
+            this.btnAgregarTelefono.Text = "Agregar";
+            this.btnAgregarTelefono.UseVisualStyleBackColor = false;
+            this.btnAgregarTelefono.Click += new System.EventHandler(this.btnAgregarTelefono_Click);
+            // 
+            // lstTelefonos
+            // 
+            this.lstTelefonos.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lstTelefonos.FormattingEnabled = true;
+            this.lstTelefonos.Location = new System.Drawing.Point(81, 149);
+            this.lstTelefonos.Name = "lstTelefonos";
+            this.lstTelefonos.Size = new System.Drawing.Size(161, 30);
+            this.lstTelefonos.TabIndex = 15;
+            // 
+            // btnQuitarMail
+            // 
+            this.btnQuitarMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.btnQuitarMail.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnQuitarMail.ForeColor = System.Drawing.Color.White;
+            this.btnQuitarMail.Location = new System.Drawing.Point(252, 62);
+            this.btnQuitarMail.Name = "btnQuitarMail";
+            this.btnQuitarMail.Size = new System.Drawing.Size(60, 23);
+            this.btnQuitarMail.TabIndex = 14;
+            this.btnQuitarMail.Text = "Quitar";
+            this.btnQuitarMail.UseVisualStyleBackColor = false;
+            this.btnQuitarMail.Click += new System.EventHandler(this.btnQuitarMail_Click);
+            // 
+            // btnAgregarMail
+            // 
+            this.btnAgregarMail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAgregarMail.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarMail.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarMail.Location = new System.Drawing.Point(252, 25);
+            this.btnAgregarMail.Name = "btnAgregarMail";
+            this.btnAgregarMail.Size = new System.Drawing.Size(60, 23);
+            this.btnAgregarMail.TabIndex = 13;
+            this.btnAgregarMail.Text = "Agregar";
+            this.btnAgregarMail.UseVisualStyleBackColor = false;
+            this.btnAgregarMail.Click += new System.EventHandler(this.btnAgregarMail_Click);
+            // 
+            // lstMails
+            // 
+            this.lstMails.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lstMails.FormattingEnabled = true;
+            this.lstMails.Location = new System.Drawing.Point(81, 59);
+            this.lstMails.Name = "lstMails";
+            this.lstMails.Size = new System.Drawing.Size(161, 30);
+            this.lstMails.TabIndex = 12;
             // 
             // checkedListBox1
             // 
@@ -104,9 +214,9 @@
             "X",
             "Telegram",
             "Facebook"});
-            this.checkedListBox1.Location = new System.Drawing.Point(103, 113);
+            this.checkedListBox1.Location = new System.Drawing.Point(122, 193);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 84);
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 74);
             this.checkedListBox1.TabIndex = 11;
             // 
             // lblUsuarioRedes
@@ -114,9 +224,9 @@
             this.lblUsuarioRedes.AutoSize = true;
             this.lblUsuarioRedes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblUsuarioRedes.Location = new System.Drawing.Point(24, 206);
+            this.lblUsuarioRedes.Location = new System.Drawing.Point(24, 276);
             this.lblUsuarioRedes.Name = "lblUsuarioRedes";
-            this.lblUsuarioRedes.Size = new System.Drawing.Size(53, 14);
+            this.lblUsuarioRedes.Size = new System.Drawing.Size(53, 13);
             this.lblUsuarioRedes.TabIndex = 10;
             this.lblUsuarioRedes.Text = "Usuario: ";
             // 
@@ -126,7 +236,7 @@
             this.txtUsuarioRedes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuarioRedes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtUsuarioRedes.Location = new System.Drawing.Point(85, 203);
+            this.txtUsuarioRedes.Location = new System.Drawing.Point(103, 273);
             this.txtUsuarioRedes.Name = "txtUsuarioRedes";
             this.txtUsuarioRedes.Size = new System.Drawing.Size(161, 23);
             this.txtUsuarioRedes.TabIndex = 8;
@@ -136,11 +246,11 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(122, 230);
+            this.btnGuardar.Location = new System.Drawing.Point(122, 302);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(83, 27);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 27);
             this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Agregar red";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
@@ -150,7 +260,7 @@
             this.mtbTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbTelefono.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.mtbTelefono.Location = new System.Drawing.Point(85, 75);
+            this.mtbTelefono.Location = new System.Drawing.Point(81, 120);
             this.mtbTelefono.Mask = "000-000-0000";
             this.mtbTelefono.Name = "mtbTelefono";
             this.mtbTelefono.Size = new System.Drawing.Size(161, 23);
@@ -165,7 +275,7 @@
             this.grbConexion.Controls.Add(this.lblEstadoActivo);
             this.grbConexion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbConexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.grbConexion.Location = new System.Drawing.Point(27, 263);
+            this.grbConexion.Location = new System.Drawing.Point(27, 335);
             this.grbConexion.Name = "grbConexion";
             this.grbConexion.Size = new System.Drawing.Size(285, 80);
             this.grbConexion.TabIndex = 4;
@@ -218,7 +328,7 @@
             this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtMail.Location = new System.Drawing.Point(85, 35);
+            this.txtMail.Location = new System.Drawing.Point(81, 27);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(161, 23);
             this.txtMail.TabIndex = 3;
@@ -228,9 +338,9 @@
             this.lblRedes.AutoSize = true;
             this.lblRedes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRedes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblRedes.Location = new System.Drawing.Point(24, 153);
+            this.lblRedes.Location = new System.Drawing.Point(24, 193);
             this.lblRedes.Name = "lblRedes";
-            this.lblRedes.Size = new System.Drawing.Size(44, 14);
+            this.lblRedes.Size = new System.Drawing.Size(44, 13);
             this.lblRedes.TabIndex = 2;
             this.lblRedes.Text = "Redes: ";
             // 
@@ -239,9 +349,9 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTelefono.Location = new System.Drawing.Point(18, 78);
+            this.lblTelefono.Location = new System.Drawing.Point(21, 130);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(55, 14);
+            this.lblTelefono.Size = new System.Drawing.Size(54, 13);
             this.lblTelefono.TabIndex = 1;
             this.lblTelefono.Text = "Telefono:";
             // 
@@ -250,9 +360,9 @@
             this.lblmail.AutoSize = true;
             this.lblmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblmail.Location = new System.Drawing.Point(36, 42);
+            this.lblmail.Location = new System.Drawing.Point(24, 30);
             this.lblmail.Name = "lblmail";
-            this.lblmail.Size = new System.Drawing.Size(32, 14);
+            this.lblmail.Size = new System.Drawing.Size(32, 13);
             this.lblmail.TabIndex = 0;
             this.lblmail.Text = "Mail:";
             // 
@@ -315,7 +425,7 @@
             this.lblAPELLIDO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblAPELLIDO.Location = new System.Drawing.Point(19, 96);
             this.lblAPELLIDO.Name = "lblAPELLIDO";
-            this.lblAPELLIDO.Size = new System.Drawing.Size(53, 14);
+            this.lblAPELLIDO.Size = new System.Drawing.Size(53, 13);
             this.lblAPELLIDO.TabIndex = 2;
             this.lblAPELLIDO.Text = "Apellido:";
             // 
@@ -326,7 +436,7 @@
             this.lblNOMBRE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNOMBRE.Location = new System.Drawing.Point(19, 59);
             this.lblNOMBRE.Name = "lblNOMBRE";
-            this.lblNOMBRE.Size = new System.Drawing.Size(51, 14);
+            this.lblNOMBRE.Size = new System.Drawing.Size(51, 13);
             this.lblNOMBRE.TabIndex = 1;
             this.lblNOMBRE.Text = "Nombre:";
             // 
@@ -337,7 +447,7 @@
             this.lblDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblDNI.Location = new System.Drawing.Point(41, 23);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(29, 14);
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI:";
             // 
@@ -346,7 +456,7 @@
             this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnAtras.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.ForeColor = System.Drawing.Color.White;
-            this.btnAtras.Location = new System.Drawing.Point(97, 391);
+            this.btnAtras.Location = new System.Drawing.Point(44, 496);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(43, 41);
             this.btnAtras.TabIndex = 13;
@@ -383,7 +493,7 @@
             this.cmbProvincia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProvincia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(162, 45);
+            this.cmbProvincia.Location = new System.Drawing.Point(9, 51);
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(121, 23);
             this.cmbProvincia.TabIndex = 3;
@@ -418,7 +528,7 @@
             "Santiago del Estero",
             "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
             "Tucumán"});
-            this.cmbLocalidad.Location = new System.Drawing.Point(9, 45);
+            this.cmbLocalidad.Location = new System.Drawing.Point(171, 51);
             this.cmbLocalidad.Name = "cmbLocalidad";
             this.cmbLocalidad.Size = new System.Drawing.Size(114, 23);
             this.cmbLocalidad.TabIndex = 2;
@@ -430,7 +540,7 @@
             this.lblLOCALIDAD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblLOCALIDAD.Location = new System.Drawing.Point(168, 28);
             this.lblLOCALIDAD.Name = "lblLOCALIDAD";
-            this.lblLOCALIDAD.Size = new System.Drawing.Size(56, 14);
+            this.lblLOCALIDAD.Size = new System.Drawing.Size(56, 13);
             this.lblLOCALIDAD.TabIndex = 0;
             this.lblLOCALIDAD.Text = "Localidad";
             // 
@@ -457,7 +567,7 @@
             this.lblPROVINCIA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblPROVINCIA.Location = new System.Drawing.Point(6, 28);
             this.lblPROVINCIA.Name = "lblPROVINCIA";
-            this.lblPROVINCIA.Size = new System.Drawing.Size(53, 14);
+            this.lblPROVINCIA.Size = new System.Drawing.Size(53, 13);
             this.lblPROVINCIA.TabIndex = 1;
             this.lblPROVINCIA.Text = "Provincia";
             // 
@@ -466,9 +576,9 @@
             this.btnMapa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnMapa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMapa.ForeColor = System.Drawing.Color.White;
-            this.btnMapa.Location = new System.Drawing.Point(116, 80);
+            this.btnMapa.Location = new System.Drawing.Point(85, 151);
             this.btnMapa.Name = "btnMapa";
-            this.btnMapa.Size = new System.Drawing.Size(161, 23);
+            this.btnMapa.Size = new System.Drawing.Size(184, 46);
             this.btnMapa.TabIndex = 7;
             this.btnMapa.Text = "Mapa";
             this.btnMapa.UseVisualStyleBackColor = false;
@@ -478,9 +588,9 @@
             this.lblGeo.AutoSize = true;
             this.lblGeo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblGeo.Location = new System.Drawing.Point(19, 84);
+            this.lblGeo.Location = new System.Drawing.Point(133, 96);
             this.lblGeo.Name = "lblGeo";
-            this.lblGeo.Size = new System.Drawing.Size(91, 14);
+            this.lblGeo.Size = new System.Drawing.Size(91, 13);
             this.lblGeo.TabIndex = 1;
             this.lblGeo.Text = "Geolocalizacion:";
             // 
@@ -489,9 +599,9 @@
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDireccion.Location = new System.Drawing.Point(32, 36);
+            this.lblDireccion.Location = new System.Drawing.Point(148, 30);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(58, 14);
+            this.lblDireccion.Size = new System.Drawing.Size(58, 13);
             this.lblDireccion.TabIndex = 0;
             this.lblDireccion.Text = "Direccion:";
             // 
@@ -499,6 +609,7 @@
             // 
             this.grbDomicilio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(242)))), ((int)(((byte)(245)))));
             this.grbDomicilio.Controls.Add(this.btnMapa);
+            this.grbDomicilio.Controls.Add(this.txtGeo);
             this.grbDomicilio.Controls.Add(this.txtDireccion);
             this.grbDomicilio.Controls.Add(this.lblGeo);
             this.grbDomicilio.Controls.Add(this.lblDireccion);
@@ -506,10 +617,21 @@
             this.grbDomicilio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.grbDomicilio.Location = new System.Drawing.Point(44, 249);
             this.grbDomicilio.Name = "grbDomicilio";
-            this.grbDomicilio.Size = new System.Drawing.Size(353, 126);
+            this.grbDomicilio.Size = new System.Drawing.Size(353, 240);
             this.grbDomicilio.TabIndex = 9;
             this.grbDomicilio.TabStop = false;
             this.grbDomicilio.Text = "Domicilio";
+            // 
+            // txtGeo
+            // 
+            this.txtGeo.BackColor = System.Drawing.Color.White;
+            this.txtGeo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGeo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGeo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.txtGeo.Location = new System.Drawing.Point(96, 118);
+            this.txtGeo.Name = "txtGeo";
+            this.txtGeo.Size = new System.Drawing.Size(161, 23);
+            this.txtGeo.TabIndex = 8;
             // 
             // txtDireccion
             // 
@@ -517,26 +639,41 @@
             this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDireccion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtDireccion.Location = new System.Drawing.Point(116, 33);
+            this.txtDireccion.Location = new System.Drawing.Point(96, 61);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(161, 23);
             this.txtDireccion.TabIndex = 6;
+            // 
+            // btnCargarTodo
+            // 
+            this.btnCargarTodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnCargarTodo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarTodo.ForeColor = System.Drawing.Color.White;
+            this.btnCargarTodo.Location = new System.Drawing.Point(586, 495);
+            this.btnCargarTodo.Name = "btnCargarTodo";
+            this.btnCargarTodo.Size = new System.Drawing.Size(153, 49);
+            this.btnCargarTodo.TabIndex = 14;
+            this.btnCargarTodo.Text = "Cargar Todo";
+            this.btnCargarTodo.UseVisualStyleBackColor = false;
+            this.btnCargarTodo.Click += new System.EventHandler(this.btnCargarTodo_Click);
             // 
             // frmPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 572);
             this.Controls.Add(this.grbContacto);
             this.Controls.Add(this.grbDatosPersonales);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCargar);
+            this.Controls.Add(this.btnCargarTodo);
             this.Controls.Add(this.grbUbicacion);
             this.Controls.Add(this.grbDomicilio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPersonal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPersonal";
             this.grbContacto.ResumeLayout(false);
             this.grbContacto.PerformLayout();
@@ -587,7 +724,17 @@
         private System.Windows.Forms.Label lblGeo;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.GroupBox grbDomicilio;
+        private System.Windows.Forms.TextBox txtGeo;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ListBox lstMails;
+        private System.Windows.Forms.Button btnAgregarMail;
+        private System.Windows.Forms.Button btnQuitarMail;
+        private System.Windows.Forms.ListBox lstTelefonos;
+        private System.Windows.Forms.Button btnAgregarTelefono;
+        private System.Windows.Forms.Button btnQuitarTelefono;
+        private System.Windows.Forms.ListBox lstRedes;
+        private System.Windows.Forms.Button btnQuitarRed;
+        private System.Windows.Forms.Button btnCargarTodo;
     }
 }

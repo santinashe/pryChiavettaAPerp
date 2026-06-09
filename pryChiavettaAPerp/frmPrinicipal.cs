@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
@@ -19,6 +19,7 @@ namespace pryChiavettaAPerp
         {
             InitializeComponent();
             conexionBD = new ConexionBD();
+            EnterNavigationHelper.Activar(this, btnIngresar);
         }
 
         #region Eventos
@@ -57,7 +58,7 @@ namespace pryChiavettaAPerp
                 if (datosUsuario.Rows.Count > 0)
                 {
                     CargarSesion(datosUsuario.Rows[0]);
-                    AuditoriaServicio.RegistrarAuditoria("frmPrinicipal", "Inicio de sesiÛn", "Login correcto");
+                    AuditoriaServicio.RegistrarAuditoria("frmPrinicipal", "Inicio de sesi√≥n", "Login correcto");
 
                     frmBienvenida formBienvenida = new frmBienvenida(
                         SesionActual.Nombre + " " + SesionActual.Apellido,
@@ -96,11 +97,11 @@ namespace pryChiavettaAPerp
 
         private DataTable ObtenerDatosUsuario(string usuario, string password)
         {
-            string consulta = @"SELECT TOP 1 u.[IdUsuario], u.[Nombre], u.[Apellido], u.[Mail], u.[ContraseÒa], p.[Nombre] AS [Perfil]
+            string consulta = @"SELECT TOP 1 u.[IdUsuario], u.[Nombre], u.[Apellido], u.[Mail], u.[Contrase√±a], p.[Nombre] AS [Perfil]
                 FROM ([Usuario] u
                 LEFT JOIN [RelacionUsuarioPerfil] r ON CStr(u.[IdUsuario]) = r.[IdUsuario])
                 LEFT JOIN [Perfil] p ON CStr(p.[IdPerfil]) = r.[IdPerfil]
-                WHERE u.[Nombre] = ? AND u.[ContraseÒa] = ?";
+                WHERE u.[Nombre] = ? AND u.[Contrase√±a] = ?";
 
             return OperacionesBD.ObtenerDatos(consulta, new OleDbParameter[]
             {
@@ -129,7 +130,7 @@ namespace pryChiavettaAPerp
             if (intentosRestantes > 0)
             {
                 MessageBox.Show(
-                    "Usuario o contraseÒa incorrectos.\nIntentos restantes: " + intentosRestantes,
+                    "Usuario o contrase√±a incorrectos.\nIntentos restantes: " + intentosRestantes,
                     "Error de login",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -139,7 +140,7 @@ namespace pryChiavettaAPerp
             }
 
             MessageBox.Show(
-                "Cantidad m·xima de intentos superada.\nLa aplicaciÛn se cerrar·.",
+                "Cantidad m√°xima de intentos superada.\nLa aplicaci√≥n se cerrar√°.",
                 "Acceso denegado",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Stop);

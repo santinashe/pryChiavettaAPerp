@@ -36,6 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblDesde = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnExportarCsv = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +72,8 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(230, 23);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.TextChanged += new System.EventHandler(this.Filtro_Cambio);
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Filtro_Cambio);
             // 
             // panel1
             // 
@@ -97,6 +107,8 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(190, 23);
             this.comboBox2.TabIndex = 5;
+            this.comboBox2.TextChanged += new System.EventHandler(this.Filtro_Cambio);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Filtro_Cambio);
             // 
             // label3
             // 
@@ -132,12 +144,93 @@
             this.dataGridView1.Size = new System.Drawing.Size(771, 270);
             this.dataGridView1.TabIndex = 8;
             // 
+            // lblDesde
+            // 
+            this.lblDesde.AutoSize = true;
+            this.lblDesde.Location = new System.Drawing.Point(245, 88);
+            this.lblDesde.Name = "lblDesde";
+            this.lblDesde.Size = new System.Drawing.Size(38, 13);
+            this.lblDesde.TabIndex = 9;
+            this.lblDesde.Text = "Desde";
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(245, 110);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(125, 20);
+            this.dtpDesde.TabIndex = 10;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.Filtro_Cambio);
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(390, 88);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(35, 13);
+            this.lblHasta.TabIndex = 11;
+            this.lblHasta.Text = "Hasta";
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(390, 110);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(125, 20);
+            this.dtpHasta.TabIndex = 12;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.Filtro_Cambio);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(35, 137);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblBuscar.TabIndex = 13;
+            this.lblBuscar.Text = "Buscar";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(90, 134);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(250, 20);
+            this.txtBuscar.TabIndex = 14;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.Filtro_Cambio);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(360, 132);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 24);
+            this.btnActualizar.TabIndex = 15;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnExportarCsv
+            // 
+            this.btnExportarCsv.Location = new System.Drawing.Point(480, 132);
+            this.btnExportarCsv.Name = "btnExportarCsv";
+            this.btnExportarCsv.Size = new System.Drawing.Size(110, 24);
+            this.btnExportarCsv.TabIndex = 16;
+            this.btnExportarCsv.Text = "Exportar CSV";
+            this.btnExportarCsv.UseVisualStyleBackColor = true;
+            this.btnExportarCsv.Click += new System.EventHandler(this.btnExportarCsv_Click);
+            // 
             // frmGestionAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(815, 450);
+            this.Controls.Add(this.btnExportarCsv);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.dtpHasta);
+            this.Controls.Add(this.lblHasta);
+            this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.lblDesde);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -164,5 +257,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblDesde;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
+        private System.Windows.Forms.Label lblHasta;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnExportarCsv;
     }
 }

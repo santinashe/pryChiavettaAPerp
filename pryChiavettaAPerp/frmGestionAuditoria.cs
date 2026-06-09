@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
@@ -9,33 +9,23 @@ namespace pryChiavettaAPerp
 {
     public partial class frmGestionAuditoria : Form
     {
-        #region Campos
-
         private DataTable auditoriaCompleta;
-        private DateTimePicker dtpDesde;
-        private DateTimePicker dtpHasta;
-        private TextBox txtBuscar;
-        private Button btnExportarCsv;
-        private Button btnActualizar;
         private Timer timerActualizacion;
         private bool cargandoFiltros;
-
-        #endregion
 
         public frmGestionAuditoria()
         {
             InitializeComponent();
+            EnterNavigationHelper.Activar(this, btnActualizar);
             Load += frmGestionAuditoria_Load;
             FormClosed += frmGestionAuditoria_FormClosed;
         }
-
-        #region Eventos
 
         private void frmGestionAuditoria_Load(object sender, EventArgs e)
         {
             try
             {
-                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditoría.");
+                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditorÃ­a.");
                 PrepararControlesExtendidos();
                 ConfigurarGrilla();
                 CargarAuditoria();
@@ -44,7 +34,7 @@ namespace pryChiavettaAPerp
             catch (Exception ex)
             {
                 AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Error", ex.Message);
-                MessageBox.Show("Error al cargar auditoría: " + ex.Message, "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar auditorÃ­a: " + ex.Message, "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -76,76 +66,20 @@ namespace pryChiavettaAPerp
             ExportarCsv();
         }
 
-        #endregion
-
-        #region Configuracion
-
         private void PrepararControlesExtendidos()
         {
-            label2.Text = "Registro de auditoría";
+            label2.Text = "Registro de auditorÃ­a";
             label1.Text = "Perfil administrador conectado";
             label4.Text = "Usuario";
-            label3.Text = "Acción";
+            label3.Text = "AcciÃ³n";
             comboBox2.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-
-            Label lblDesde = new Label();
-            lblDesde.Text = "Desde";
-            lblDesde.Location = new System.Drawing.Point(245, 88);
-            lblDesde.AutoSize = true;
-            Controls.Add(lblDesde);
-
-            dtpDesde = new DateTimePicker();
-            dtpDesde.Location = new System.Drawing.Point(245, 110);
-            dtpDesde.Size = new System.Drawing.Size(125, 20);
-            dtpDesde.Format = DateTimePickerFormat.Short;
             dtpDesde.Value = DateTime.Today.AddDays(-30);
-            dtpDesde.ValueChanged += Filtro_Cambio;
-            Controls.Add(dtpDesde);
-
-            Label lblHasta = new Label();
-            lblHasta.Text = "Hasta";
-            lblHasta.Location = new System.Drawing.Point(390, 88);
-            lblHasta.AutoSize = true;
-            Controls.Add(lblHasta);
-
-            dtpHasta = new DateTimePicker();
-            dtpHasta.Location = new System.Drawing.Point(390, 110);
-            dtpHasta.Size = new System.Drawing.Size(125, 20);
-            dtpHasta.Format = DateTimePickerFormat.Short;
             dtpHasta.Value = DateTime.Today;
-            dtpHasta.ValueChanged += Filtro_Cambio;
-            Controls.Add(dtpHasta);
-
-            Label lblBuscar = new Label();
-            lblBuscar.Text = "Buscar";
-            lblBuscar.Location = new System.Drawing.Point(35, 137);
-            lblBuscar.AutoSize = true;
-            Controls.Add(lblBuscar);
-
-            txtBuscar = new TextBox();
-            txtBuscar.Location = new System.Drawing.Point(90, 134);
-            txtBuscar.Size = new System.Drawing.Size(250, 20);
-            txtBuscar.TextChanged += Filtro_Cambio;
-            Controls.Add(txtBuscar);
-
-            btnActualizar = new Button();
-            btnActualizar.Text = "Actualizar";
-            btnActualizar.Location = new System.Drawing.Point(360, 132);
-            btnActualizar.Size = new System.Drawing.Size(100, 24);
-            btnActualizar.Click += btnActualizar_Click;
-            Controls.Add(btnActualizar);
-
-            btnExportarCsv = new Button();
-            btnExportarCsv.Text = "Exportar CSV";
-            btnExportarCsv.Location = new System.Drawing.Point(480, 132);
-            btnExportarCsv.Size = new System.Drawing.Size(110, 24);
-            btnExportarCsv.Click += btnExportarCsv_Click;
-            Controls.Add(btnExportarCsv);
 
             timerActualizacion = new Timer();
             timerActualizacion.Interval = 30000;
@@ -163,10 +97,6 @@ namespace pryChiavettaAPerp
             dataGridView1.MultiSelect = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-
-        #endregion
-
-        #region Datos
 
         private void CargarAuditoria()
         {
@@ -302,7 +232,7 @@ namespace pryChiavettaAPerp
             MostrarPrimero("Usuario", 2, "Usuario");
             MostrarPrimero("Rol", 3, "Rol");
             MostrarPrimero("Formulario", 4, "Formulario");
-            MostrarPrimero("Movimiento", 5, "Acción");
+            MostrarPrimero("Movimiento", 5, "AcciÃ³n");
             MostrarPrimero("Detalle", 6, "Detalle");
         }
 
@@ -317,10 +247,6 @@ namespace pryChiavettaAPerp
             dataGridView1.Columns[columna].DisplayIndex = Math.Min(posicion, dataGridView1.Columns.Count - 1);
         }
 
-        #endregion
-
-        #region Exportacion
-
         private void ExportarCsv()
         {
             try
@@ -329,7 +255,7 @@ namespace pryChiavettaAPerp
 
                 if (tabla == null || tabla.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay registros para exportar.", "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No hay registros para exportar.", "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -365,14 +291,14 @@ namespace pryChiavettaAPerp
                     }
 
                     File.WriteAllText(dialogo.FileName, csv.ToString(), Encoding.UTF8);
-                    AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Exportación CSV", dialogo.FileName);
-                    MessageBox.Show("Exportación finalizada.", "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "ExportaciÃ³n CSV", dialogo.FileName);
+                    MessageBox.Show("ExportaciÃ³n finalizada.", "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Error", ex.Message);
-                MessageBox.Show("Error al exportar CSV: " + ex.Message, "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al exportar CSV: " + ex.Message, "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -386,7 +312,5 @@ namespace pryChiavettaAPerp
             string limpio = valor.Replace("\"", "\"\"");
             return "\"" + limpio + "\"";
         }
-
-        #endregion
     }
 }

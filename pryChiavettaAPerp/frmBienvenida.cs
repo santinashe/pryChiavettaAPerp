@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Windows.Forms;
 
 namespace pryChiavettaAPerp
@@ -17,6 +17,7 @@ namespace pryChiavettaAPerp
             InitializeComponent();
             nombreUsuario = usuario;
             rolUsuario = PermisosServicio.NormalizarRol(rol);
+            EnterNavigationHelper.Activar(this, bntIngresar);
         }
 
         #region Eventos
@@ -29,7 +30,7 @@ namespace pryChiavettaAPerp
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            AuditoriaServicio.RegistrarAuditoria("frmBienvenida", "Cierre de sesión");
+            AuditoriaServicio.RegistrarAuditoria("frmBienvenida", "Cierre de sesiÃ³n");
             SesionActual.CerrarSesion();
             Close();
         }
@@ -44,7 +45,7 @@ namespace pryChiavettaAPerp
             catch (Exception ex)
             {
                 AuditoriaServicio.RegistrarAuditoria("frmBienvenida", "Error", ex.Message);
-                MessageBox.Show("Error al abrir el menú: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al abrir el menÃº: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Windows.Forms;
 
 namespace pryChiavettaAPerp
@@ -8,6 +8,7 @@ namespace pryChiavettaAPerp
         public frmAcciones()
         {
             InitializeComponent();
+            EnterNavigationHelper.Activar(this);
             Load += frmAcciones_Load;
             button2.Click += button2_Click;
             button5.Click += button5_Click;
@@ -62,7 +63,7 @@ namespace pryChiavettaAPerp
         {
             try
             {
-                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditoría.");
+                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditorÃ­a.");
                 frmGestionAuditoria auditoria = new frmGestionAuditoria();
                 auditoria.ShowDialog();
             }
@@ -75,7 +76,7 @@ namespace pryChiavettaAPerp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AuditoriaServicio.RegistrarAuditoria("frmAcciones", "Cierre de sesión");
+            AuditoriaServicio.RegistrarAuditoria("frmAcciones", "Cierre de sesiÃ³n");
             SesionActual.CerrarSesion();
             Close();
         }

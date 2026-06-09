@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="EnterNavigationHelper.cs" />
     <Compile Include="frmAcciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +100,7 @@
       <DependentUpon>frmGestionAuditoria.cs</DependentUpon>
     </Compile>
     <Compile Include="GeolocalizacionHelper.cs" />
+    <Compile Include="LocalidadesServicio.cs" />
     <Compile Include="OperacionesBD.cs" />
     <Compile Include="AuditoriaServicio.cs" />
     <Compile Include="PermisosServicio.cs" />
@@ -107,6 +109,9 @@
     <Compile Include="UsuarioServicio.cs" />
     <Compile Include="frmGestionUsuarios.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionUsuarios.Designer.cs">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAcciones.resx">
@@ -148,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Base-Datos\BASEDATOSPERF1.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Base-Datos\LocalidadBD.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
