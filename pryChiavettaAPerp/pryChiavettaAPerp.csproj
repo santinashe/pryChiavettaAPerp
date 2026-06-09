@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="EjemplosBD.cs" />
     <Compile Include="frmAcciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +133,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DIAGRAMA_VISUAL.md" />
-    <None Include="DOCUMENTACION_COMPLETA.md" />
-    <None Include="ENTREGA_FINAL.md" />
-    <None Include="GUIA_RAPIDA.md" />
-    <None Include="INDICE.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,8 +142,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="README.md" />
-    <None Include="RESUMEN_EJECUTIVO.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -158,8 +150,6 @@
     <Content Include="Base-Datos\BASEDATOSPERF1.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="CREACION_TABLAS.sql" />
-    <Content Include="LEEME_PRIMERO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
