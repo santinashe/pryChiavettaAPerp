@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -66,82 +66,86 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionBD.cs" />
-    <Compile Include="Config.cs" />
-    <Compile Include="EnterNavigationHelper.cs" />
-    <Compile Include="frmAcciones.cs">
+    <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="Clases\Config.cs" />
+    <Compile Include="Clases\EnterNavigationHelper.cs" />
+    <Compile Include="Formularios\frmAcciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAcciones.Designer.cs">
+    <Compile Include="Formularios\frmAcciones.Designer.cs">
       <DependentUpon>frmAcciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPersonal.cs">
+    <Compile Include="Formularios\frmPersonal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPersonal.Designer.cs">
+    <Compile Include="Formularios\frmPersonal.Designer.cs">
       <DependentUpon>frmPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrinicipal.cs">
+    <Compile Include="Formularios\frmPrinicipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrinicipal.Designer.cs">
+    <Compile Include="Formularios\frmPrinicipal.Designer.cs">
       <DependentUpon>frmPrinicipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBienvenida.cs">
+    <Compile Include="Formularios\frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBienvenida.Designer.cs">
+    <Compile Include="Formularios\frmBienvenida.Designer.cs">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionAuditoria.cs">
+    <Compile Include="Formularios\frmGestionAuditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionAuditoria.Designer.cs">
+    <Compile Include="Formularios\frmGestionAuditoria.Designer.cs">
       <DependentUpon>frmGestionAuditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="GeolocalizacionHelper.cs" />
-    <Compile Include="LocalidadesServicio.cs" />
-    <Compile Include="OperacionesBD.cs" />
-    <Compile Include="AuditoriaServicio.cs" />
-    <Compile Include="PermisosServicio.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="SesionActual.cs" />
-    <Compile Include="UsuarioServicio.cs" />
-    <Compile Include="frmGestionUsuarios.cs">
+    <Compile Include="Clases\GeolocalizacionHelper.cs" />
+    <Compile Include="Clases\LocalidadesServicio.cs" />
+    <Compile Include="Clases\OperacionesBD.cs" />
+    <Compile Include="Clases\AuditoriaServicio.cs" />
+    <Compile Include="Clases\PermisosServicio.cs" />
+    <Compile Include="Clases\Program.cs" />
+    <Compile Include="Clases\SesionActual.cs" />
+    <Compile Include="Clases\UsuarioServicio.cs" />
+    <Compile Include="Formularios\frmGestionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionUsuarios.Designer.cs">
+    <Compile Include="Formularios\frmGestionUsuarios.Designer.cs">
       <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAcciones.resx">
+    <EmbeddedResource Include="Formularios\frmAcciones.resx">
       <DependentUpon>frmAcciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersonal.resx">
+    <EmbeddedResource Include="Formularios\frmGestionUsuarios.resx">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPersonal.resx">
       <DependentUpon>frmPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrinicipal.resx">
+    <EmbeddedResource Include="Formularios\frmPrinicipal.resx">
       <DependentUpon>frmPrinicipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBienvenida.resx">
+    <EmbeddedResource Include="Formularios\frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionAuditoria.resx">
+    <EmbeddedResource Include="Formularios\frmGestionAuditoria.resx">
       <DependentUpon>frmGestionAuditoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -158,6 +162,7 @@
     <Content Include="Base-Datos\LocalidadBD.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

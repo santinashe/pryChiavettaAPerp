@@ -614,5 +614,10 @@ namespace pryChiavettaAPerp
                 return RedSocial + " - " + Usuario;
             }
         }
+
+        private void btnAtras_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

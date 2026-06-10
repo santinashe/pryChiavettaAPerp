@@ -312,5 +312,10 @@ namespace pryChiavettaAPerp
             string limpio = valor.Replace("\"", "\"\"");
             return "\"" + limpio + "\"";
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

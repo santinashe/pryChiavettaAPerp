@@ -205,5 +205,85 @@ namespace pryChiavettaAPerp
             cmbRol.SelectedIndex = -1;
             txtNombre.Focus();
         }
+
+        private void frmGestionUsuarios_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblContrasenia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
