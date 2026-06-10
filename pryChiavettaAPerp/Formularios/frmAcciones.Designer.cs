@@ -139,6 +139,7 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "SALIR";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // pictureBox1
             // 

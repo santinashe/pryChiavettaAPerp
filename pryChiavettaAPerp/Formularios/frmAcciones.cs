@@ -76,10 +76,10 @@ namespace pryChiavettaAPerp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AuditoriaServicio.RegistrarAuditoria("frmAcciones", "Cierre de sesión");
-            SesionActual.CerrarSesion();
+            AuditoriaServicio.RegistrarAuditoria("frmAcciones", "Cierre de formulario");
             Close();
         }
+        
 
         #endregion
 
@@ -93,5 +93,10 @@ namespace pryChiavettaAPerp
         }
 
         #endregion
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
