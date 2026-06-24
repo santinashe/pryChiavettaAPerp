@@ -34,10 +34,10 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.chkMostrar = new System.Windows.Forms.CheckBox();
+            this.chkMostrar = new Guna.UI2.WinForms.Guna2CheckBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.lblEstadoConexion = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -200,10 +200,10 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.CheckBox chkMostrar;
+        private Guna.UI2.WinForms.Guna2CheckBox chkMostrar;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Label lblEstadoConexion;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel1;
         private System.Windows.Forms.Button btnSalir;
     }
 }

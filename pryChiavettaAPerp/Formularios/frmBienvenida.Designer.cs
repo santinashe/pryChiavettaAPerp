@@ -36,7 +36,7 @@ namespace pryChiavettaAPerp
             this.lblRol = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.bntIngresar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,6 +167,6 @@ namespace pryChiavettaAPerp
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button bntIngresar;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel1;
     }
 }

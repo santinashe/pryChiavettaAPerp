@@ -1,4 +1,4 @@
-﻿namespace pryChiavettaAPerp
+namespace pryChiavettaAPerp
 {
     partial class frmGestionAuditoria
     {
@@ -128,7 +128,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 28);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Acción a controlar";
+            this.label3.Text = "Acci�n a controlar";
             // 
             // label4
             // 
@@ -258,7 +258,7 @@
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(57, 50);
             this.btnAtras.TabIndex = 17;
-            this.btnAtras.Text = "🡸";
+            this.btnAtras.Text = "??";
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 

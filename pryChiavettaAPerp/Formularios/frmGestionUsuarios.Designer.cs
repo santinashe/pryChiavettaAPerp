@@ -16,14 +16,14 @@ namespace pryChiavettaAPerp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionUsuarios));
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgvUsuarios = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.txtContrasenia = new System.Windows.Forms.TextBox();
-            this.cmbRol = new System.Windows.Forms.ComboBox();
+            this.cmbRol = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@ namespace pryChiavettaAPerp
             this.lblMail = new System.Windows.Forms.Label();
             this.lblContrasenia = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
@@ -352,14 +352,14 @@ namespace pryChiavettaAPerp
 
         }
 
-        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvUsuarios;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtContrasenia;
-        private System.Windows.Forms.ComboBox cmbRol;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbRol;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnAlta;
         private System.Windows.Forms.Button btnModificar;
@@ -375,7 +375,7 @@ namespace pryChiavettaAPerp
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label lblContrasenia;
         private System.Windows.Forms.Label lblRol;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel1;
         private System.Windows.Forms.Button btnAtras;
     }
 }

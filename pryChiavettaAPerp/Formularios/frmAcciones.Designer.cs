@@ -1,4 +1,4 @@
-ï»¿namespace pryChiavettaAPerp
+namespace pryChiavettaAPerp
 {
     partial class frmAcciones
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcciones));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(878, 106);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Seleccione una opciÃ³n";
+            this.label1.Text = "Seleccione una opción";
             // 
             // button1
             // 
@@ -123,7 +123,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(267, 98);
             this.button3.TabIndex = 7;
-            this.button3.Text = "AuditorÃ­a";
+            this.button3.Text = "Auditoría";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -180,7 +180,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;

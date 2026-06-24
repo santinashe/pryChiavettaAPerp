@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Data;
 using System.Globalization;
 using System.IO;
@@ -16,6 +16,7 @@ namespace pryChiavettaAPerp
         public frmGestionAuditoria()
         {
             InitializeComponent();
+            ModernUiHelper.Aplicar(this);
             EnterNavigationHelper.Activar(this, btnActualizar);
             Load += frmGestionAuditoria_Load;
             FormClosed += frmGestionAuditoria_FormClosed;
@@ -25,7 +26,7 @@ namespace pryChiavettaAPerp
         {
             try
             {
-                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditorÃ­a.");
+                PermisosServicio.Exigir(PermisosServicio.PuedeVerAuditoria(), "No tiene permisos para consultar auditoría.");
                 PrepararControlesExtendidos();
                 ConfigurarGrilla();
                 CargarAuditoria();
@@ -34,7 +35,7 @@ namespace pryChiavettaAPerp
             catch (Exception ex)
             {
                 AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Error", ex.Message);
-                MessageBox.Show("Error al cargar auditorÃ­a: " + ex.Message, "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar auditoría: " + ex.Message, "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Close();
             }
         }
@@ -68,10 +69,10 @@ namespace pryChiavettaAPerp
 
         private void PrepararControlesExtendidos()
         {
-            label2.Text = "Registro de auditorÃ­a";
+            label2.Text = "Registro de auditoría";
             label1.Text = "Perfil administrador conectado";
             label4.Text = "Usuario";
-            label3.Text = "AcciÃ³n";
+            label3.Text = "Acción";
             comboBox2.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -232,7 +233,7 @@ namespace pryChiavettaAPerp
             MostrarPrimero("Usuario", 2, "Usuario");
             MostrarPrimero("Rol", 3, "Rol");
             MostrarPrimero("Formulario", 4, "Formulario");
-            MostrarPrimero("Movimiento", 5, "AcciÃ³n");
+            MostrarPrimero("Movimiento", 5, "Acción");
             MostrarPrimero("Detalle", 6, "Detalle");
         }
 
@@ -255,7 +256,7 @@ namespace pryChiavettaAPerp
 
                 if (tabla == null || tabla.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay registros para exportar.", "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No hay registros para exportar.", "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -291,14 +292,14 @@ namespace pryChiavettaAPerp
                     }
 
                     File.WriteAllText(dialogo.FileName, csv.ToString(), Encoding.UTF8);
-                    AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "ExportaciÃ³n CSV", dialogo.FileName);
-                    MessageBox.Show("ExportaciÃ³n finalizada.", "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Exportación CSV", dialogo.FileName);
+                    MessageBox.Show("Exportación finalizada.", "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 AuditoriaServicio.RegistrarAuditoria("frmGestionAuditoria", "Error", ex.Message);
-                MessageBox.Show("Error al exportar CSV: " + ex.Message, "AuditorÃ­a", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al exportar CSV: " + ex.Message, "Auditoría", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

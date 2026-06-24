@@ -13,6 +13,7 @@ namespace pryChiavettaAPerp
         public frmPersonal()
         {
             InitializeComponent();
+            ModernUiHelper.Aplicar(this);
 
             btnMapa.Click += BtnMapa_Click;
             btnLimpiar.Click += BtnLimpiar_Click;

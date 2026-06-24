@@ -1,4 +1,4 @@
-﻿namespace pryChiavettaAPerp
+namespace pryChiavettaAPerp
 {
     partial class frmPersonal
     {
@@ -300,7 +300,7 @@
             this.grbConexion.Size = new System.Drawing.Size(380, 98);
             this.grbConexion.TabIndex = 4;
             this.grbConexion.TabStop = false;
-            this.grbConexion.Text = "Conexión";
+            this.grbConexion.Text = "Conexi�n";
             // 
             // chkInactivo
             // 
@@ -497,7 +497,7 @@
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(57, 50);
             this.btnAtras.TabIndex = 13;
-            this.btnAtras.Text = "🡸";
+            this.btnAtras.Text = "??";
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click_1);
             // 
@@ -550,25 +550,25 @@
             "Catamarca",
             "Chaco",
             "Chubut",
-            "Córdoba",
+            "C�rdoba",
             "Corrientes",
-            "Entre Ríos",
+            "Entre R�os",
             "Formosa",
             "Jujuy",
             "La Pampa",
             "La Rioja",
             "Mendoza",
             "Misiones",
-            "Neuquén",
-            "Río Negro",
+            "Neuqu�n",
+            "R�o Negro",
             "Salta",
             "San Juan",
             "San Luis",
             "Santa Cruz",
             "Santa Fe",
             "Santiago del Estero",
-            "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
-            "Tucumán"});
+            "Tierra del Fuego, Ant�rtida e Islas del Atl�ntico Sur",
+            "Tucum�n"});
             this.cmbLocalidad.Location = new System.Drawing.Point(228, 63);
             this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbLocalidad.Name = "cmbLocalidad";
@@ -603,7 +603,7 @@
             this.grbUbicacion.Size = new System.Drawing.Size(471, 106);
             this.grbUbicacion.TabIndex = 8;
             this.grbUbicacion.TabStop = false;
-            this.grbUbicacion.Text = "Ubicaciòn";
+            this.grbUbicacion.Text = "Ubicaci�n";
             // 
             // lblPROVINCIA
             // 

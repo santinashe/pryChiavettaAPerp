@@ -11,6 +11,7 @@ namespace pryChiavettaAPerp
         public frmGestionUsuarios()
         {
             InitializeComponent();
+            ModernUiHelper.Aplicar(this);
             cmbRol.Items.Add(PermisosServicio.RolAdministrador);
             cmbRol.Items.Add(PermisosServicio.RolSupervisor);
             cmbRol.Items.Add(PermisosServicio.RolOperador);

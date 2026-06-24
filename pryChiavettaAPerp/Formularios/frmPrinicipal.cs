@@ -18,6 +18,7 @@ namespace pryChiavettaAPerp
         public frmPrinicipal()
         {
             InitializeComponent();
+            ModernUiHelper.Aplicar(this);
             conexionBD = new ConexionBD();
             EnterNavigationHelper.Activar(this, btnIngresar);
         }
