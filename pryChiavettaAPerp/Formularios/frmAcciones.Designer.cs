@@ -30,9 +30,9 @@ namespace pryChiavettaAPerp
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAcciones));
             this.panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,13 +53,6 @@ namespace pryChiavettaAPerp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2022, 183);
             this.panel1.TabIndex = 4;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(864, 239);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(351, 22);
-            this.dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
@@ -85,6 +78,13 @@ namespace pryChiavettaAPerp
             this.label1.Size = new System.Drawing.Size(878, 106);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione una opción";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(864, 239);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(351, 22);
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // button1
             // 
@@ -150,6 +150,7 @@ namespace pryChiavettaAPerp
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmAcciones
             // 

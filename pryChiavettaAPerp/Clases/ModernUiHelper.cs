@@ -35,6 +35,11 @@ namespace pryChiavettaAPerp
             formulario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
 
             RegistrarComponentes(formulario);
+            AplicarDistribucion(formulario);
+            formulario.Shown -= Formulario_Shown;
+            formulario.Shown += Formulario_Shown;
+            formulario.Resize -= Formulario_Resize;
+            formulario.Resize += Formulario_Resize;
             AplicarAControles(formulario.Controls);
         }
 
@@ -110,6 +115,31 @@ namespace pryChiavettaAPerp
 
         private static void AplicarEstilo(Control control)
         {
+            Label label = control as Label;
+            if (label != null)
+            {
+                if (label.Parent != null && string.Equals(label.Parent.Name, "panel1", StringComparison.OrdinalIgnoreCase))
+                {
+                    label.AutoSize = false;
+                    label.Width = label.Parent.ClientSize.Width;
+                    label.Left = 0;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    float tamano = Math.Min(Math.Max(label.Font.Size, 12F), 26F);
+                    label.Font = new Font("Segoe UI Semibold", tamano, FontStyle.Bold, GraphicsUnit.Point, 0);
+                }
+                else
+                {
+                    label.Font = new Font("Segoe UI Semibold", label.Font.Size, label.Font.Style, GraphicsUnit.Point, 0);
+                }
+
+                if (label.ForeColor != Color.White)
+                {
+                    label.ForeColor = GrisTexto;
+                }
+
+                return;
+            }
+
             control.Font = new Font("Segoe UI", 10F, control.Font.Style, GraphicsUnit.Point, 0);
 
             Button boton = control as Button;
@@ -194,14 +224,10 @@ namespace pryChiavettaAPerp
             Panel panel = control as Panel;
             if (panel != null && panel.Name == "panel1")
             {
+                panel.Location = new Point(0, panel.Location.Y);
+                panel.Width = panel.Parent != null ? panel.Parent.ClientSize.Width : panel.Width;
                 panel.BackColor = Azul;
                 return;
-            }
-
-            Label label = control as Label;
-            if (label != null && label.ForeColor != Color.White)
-            {
-                label.ForeColor = GrisTexto;
             }
         }
 
@@ -241,6 +267,238 @@ namespace pryChiavettaAPerp
             dataGridView.DefaultCellStyle.SelectionForeColor = GrisTexto;
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = GrisFondo;
             dataGridView.GridColor = GrisBorde;
+        }
+
+        private static void AplicarDistribucion(Form formulario)
+        {
+            AjustarBarraSuperior(formulario);
+            AjustarBotonesPrincipales(formulario);
+            AjustarBotonesEspecificos(formulario);
+        }
+
+        private static void AjustarBarraSuperior(Form formulario)
+        {
+            Panel panel = BuscarControl(formulario.Controls, "panel1") as Panel;
+            if (panel == null)
+            {
+                return;
+            }
+
+            panel.Location = new Point(0, panel.Location.Y);
+            panel.Width = formulario.ClientSize.Width;
+
+            if (formulario.Name == "frmBienvenida")
+            {
+                panel.Location = new Point(0, 0);
+            }
+        }
+
+        private static void AjustarBotonesPrincipales(Form formulario)
+        {
+            if (formulario.Name == "frmPrinicipal")
+            {
+                CentrarFilaBotones(formulario, 309, 16, "btnSalir", "btnIngresar");
+                return;
+            }
+
+            if (formulario.Name == "frmBienvenida")
+            {
+                CentrarFilaBotones(formulario, 346, 16, "btnCerrar", "bntIngresar");
+                return;
+            }
+
+            if (formulario.Name == "frmAcciones")
+            {
+                AjustarAcciones(formulario);
+                return;
+            }
+
+            if (formulario.Name == "frmGestionAuditoria")
+            {
+                CentrarFilaBotones(formulario, 223, 24, "btnActualizar", "btnExportarCsv");
+            }
+        }
+
+        private static void AjustarBotonesEspecificos(Form formulario)
+        {
+            if (formulario.Name == "frmGestionUsuarios")
+            {
+                Control btnAlta = BuscarControl(formulario.Controls, "btnAlta");
+                Control btnModificar = BuscarControl(formulario.Controls, "btnModificar");
+                Control btnBaja = BuscarControl(formulario.Controls, "btnBaja");
+                Control btnLimpiar = BuscarControl(formulario.Controls, "btnLimpiar");
+
+                if (btnAlta != null) btnAlta.Top = 494;
+                if (btnModificar != null) btnModificar.Top = 494;
+                if (btnBaja != null) btnBaja.Top = 556;
+                if (btnLimpiar != null) btnLimpiar.Top = 556;
+            }
+
+            if (formulario.Name == "frmGestionAuditoria" || formulario.Name == "frmPersonal")
+            {
+                Control btnAtras = BuscarControl(formulario.Controls, "btnAtras");
+                if (btnAtras != null)
+                {
+                    btnAtras.Text = "<";
+                }
+            }
+        }
+
+        private static void AjustarAcciones(Form formulario)
+        {
+            Panel panel = BuscarControl(formulario.Controls, "panel1") as Panel;
+            if (panel != null)
+            {
+                panel.Height = 100;
+                panel.Location = new Point(0, 0);
+                panel.Width = formulario.ClientSize.Width;
+            }
+
+            Label titulo = BuscarControl(formulario.Controls, "label1") as Label;
+            if (titulo != null)
+            {
+                titulo.AutoSize = false;
+                titulo.Left = 0;
+                titulo.Top = 6;
+                titulo.Width = formulario.ClientSize.Width;
+                titulo.Height = 44;
+                titulo.TextAlign = ContentAlignment.MiddleCenter;
+                titulo.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            }
+
+            Label subtitulo = BuscarControl(formulario.Controls, "label2") as Label;
+            if (subtitulo != null)
+            {
+                subtitulo.AutoSize = false;
+                subtitulo.Left = 0;
+                subtitulo.Top = 50;
+                subtitulo.Width = formulario.ClientSize.Width;
+                subtitulo.Height = 28;
+                subtitulo.TextAlign = ContentAlignment.MiddleCenter;
+                subtitulo.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            }
+
+            DateTimePicker fecha = BuscarControl(formulario.Controls, "dateTimePicker1") as DateTimePicker;
+            if (fecha != null)
+            {
+                fecha.Width = 380;
+                fecha.Height = 28;
+                fecha.Left = Math.Max(0, (formulario.ClientSize.Width - fecha.Width) / 2);
+                fecha.Top = 128;
+            }
+
+            PictureBox imagen = BuscarControl(formulario.Controls, "pictureBox1") as PictureBox;
+            if (imagen != null)
+            {
+                imagen.SizeMode = PictureBoxSizeMode.Zoom;
+                imagen.Size = new Size(320, 320);
+                imagen.Left = Math.Max(0, (formulario.ClientSize.Width - imagen.Width) / 2);
+                imagen.Top = 205;
+            }
+
+            int botonAncho = 240;
+            int botonAlto = 90;
+            int botonTop1 = 320;
+            int botonTop2 = 520;
+            int izquierda = Math.Max(24, (formulario.ClientSize.Width / 2) - imagen.Width / 2 - botonAncho - 60);
+            int derecha = Math.Min(formulario.ClientSize.Width - botonAncho - 24, (formulario.ClientSize.Width / 2) + imagen.Width / 2 + 60);
+
+            AplicarTamanioBoton(formulario, "button2", izquierda, botonTop1, botonAncho, botonAlto);
+            AplicarTamanioBoton(formulario, "button3", izquierda, botonTop2, botonAncho, botonAlto);
+            AplicarTamanioBoton(formulario, "button1", derecha, botonTop1, botonAncho, botonAlto);
+            AplicarTamanioBoton(formulario, "button5", derecha, botonTop2, botonAncho, botonAlto);
+        }
+
+        private static void AplicarTamanioBoton(Form formulario, string nombre, int left, int top, int width, int height)
+        {
+            Button boton = BuscarControl(formulario.Controls, nombre) as Button;
+            if (boton == null)
+            {
+                return;
+            }
+
+            boton.Left = left;
+            boton.Top = top;
+            boton.Width = width;
+            boton.Height = height;
+        }
+
+        private static void Formulario_Shown(object sender, EventArgs e)
+        {
+            Form formulario = sender as Form;
+            if (formulario != null)
+            {
+                AplicarDistribucion(formulario);
+            }
+        }
+
+        private static void Formulario_Resize(object sender, EventArgs e)
+        {
+            Form formulario = sender as Form;
+            if (formulario != null)
+            {
+                AplicarDistribucion(formulario);
+            }
+        }
+
+        private static void CentrarFilaBotones(Form formulario, int top, int gap, params string[] nombres)
+        {
+            List<Button> botones = new List<Button>();
+
+            foreach (string nombre in nombres)
+            {
+                Button boton = BuscarControl(formulario.Controls, nombre) as Button;
+                if (boton != null)
+                {
+                    botones.Add(boton);
+                }
+            }
+
+            if (botones.Count == 0)
+            {
+                return;
+            }
+
+            int anchoTotal = 0;
+            for (int i = 0; i < botones.Count; i++)
+            {
+                anchoTotal += botones[i].Width;
+                if (i < botones.Count - 1)
+                {
+                    anchoTotal += gap;
+                }
+            }
+
+            int inicioX = Math.Max(0, (formulario.ClientSize.Width - anchoTotal) / 2);
+
+            foreach (Button boton in botones)
+            {
+                boton.Top = top;
+                boton.Left = inicioX;
+                inicioX += boton.Width + gap;
+            }
+        }
+
+        private static Control BuscarControl(Control.ControlCollection controles, string nombre)
+        {
+            foreach (Control control in controles)
+            {
+                if (string.Equals(control.Name, nombre, StringComparison.OrdinalIgnoreCase))
+                {
+                    return control;
+                }
+
+                if (control.HasChildren)
+                {
+                    Control encontrado = BuscarControl(control.Controls, nombre);
+                    if (encontrado != null)
+                    {
+                        return encontrado;
+                    }
+                }
+            }
+
+            return null;
         }
 
         private static void Formulario_FormClosed(object sender, FormClosedEventArgs e)
